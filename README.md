@@ -1,3 +1,16 @@
+[![Build Status](https://codefirst.iut.uca.fr/api/badges/MinecraftCraftingCorp/MinecraftCrafting/status.svg)](https://codefirst.iut.uca.fr/MinecraftCraftingCorp/MinecraftCrafting)
+[![Quality Gate Status](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=MinecraftCrafting&metric=alert_status&token=9e1f4645b86eb1abd678f85c330ad6047baebd85)](https://codefirst.iut.uca.fr/sonar/dashboard?id=MinecraftCrafting)
+[![Maintainability Rating](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=MinecraftCrafting&metric=sqale_rating&token=9e1f4645b86eb1abd678f85c330ad6047baebd85)](https://codefirst.iut.uca.fr/sonar/dashboard?id=MinecraftCrafting)
+[![Reliability Rating](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=MinecraftCrafting&metric=reliability_rating&token=9e1f4645b86eb1abd678f85c330ad6047baebd85)](https://codefirst.iut.uca.fr/sonar/dashboard?id=MinecraftCrafting)
+[![Security Rating](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=MinecraftCrafting&metric=security_rating&token=9e1f4645b86eb1abd678f85c330ad6047baebd85)](https://codefirst.iut.uca.fr/sonar/dashboard?id=MinecraftCrafting)
+[![Bugs](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=MinecraftCrafting&metric=bugs&token=9e1f4645b86eb1abd678f85c330ad6047baebd85)](https://codefirst.iut.uca.fr/sonar/dashboard?id=MinecraftCrafting)
+[![Technical Debt](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=MinecraftCrafting&metric=sqale_index&token=9e1f4645b86eb1abd678f85c330ad6047baebd85)](https://codefirst.iut.uca.fr/sonar/dashboard?id=MinecraftCrafting)
+[![Vulnerabilities](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=MinecraftCrafting&metric=vulnerabilities&token=9e1f4645b86eb1abd678f85c330ad6047baebd85)](https://codefirst.iut.uca.fr/sonar/dashboard?id=MinecraftCrafting)
+[![Code Smells](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=MinecraftCrafting&metric=code_smells&token=9e1f4645b86eb1abd678f85c330ad6047baebd85)](https://codefirst.iut.uca.fr/sonar/dashboard?id=MinecraftCrafting)
+[![Duplicated Lines (%)](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=MinecraftCrafting&metric=duplicated_lines_density&token=9e1f4645b86eb1abd678f85c330ad6047baebd85)](https://codefirst.iut.uca.fr/sonar/dashboard?id=MinecraftCrafting)
+[![Coverage](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=MinecraftCrafting&metric=coverage&token=9e1f4645b86eb1abd678f85c330ad6047baebd85)](https://codefirst.iut.uca.fr/sonar/dashboard?id=MinecraftCrafting)
+[![Lines of Code](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=MinecraftCrafting&metric=ncloc&token=9e1f4645b86eb1abd678f85c330ad6047baebd85)](https://codefirst.iut.uca.fr/sonar/dashboard?id=MinecraftCrafting)
+
 # MinecraftCrafting
 
 ## Blazor Apps (30 points)
