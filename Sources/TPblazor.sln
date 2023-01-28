@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TPblazor", "TPblazor\TPblazor.csproj", "{A2471DCE-58E2-428C-9827-4467869DCB73}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Minecraft.Crafting.Api", "Minecraft.Crafting.Api\Minecraft.Crafting.Api.csproj", "{386D9D48-947C-4C74-A6C8-B99AA561D491}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestsProject", "Tests\TestsProject\TestsProject.csproj", "{61AD7D7A-81E8-4F9F-83C0-39A21AF67B82}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{78B64605-9E51-4A03-999B-EAC44A48535B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A2471DCE-58E2-428C-9827-4467869DCB73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2471DCE-58E2-428C-9827-4467869DCB73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2471DCE-58E2-428C-9827-4467869DCB73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2471DCE-58E2-428C-9827-4467869DCB73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{386D9D48-947C-4C74-A6C8-B99AA561D491}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{386D9D48-947C-4C74-A6C8-B99AA561D491}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{386D9D48-947C-4C74-A6C8-B99AA561D491}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{386D9D48-947C-4C74-A6C8-B99AA561D491}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61AD7D7A-81E8-4F9F-83C0-39A21AF67B82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61AD7D7A-81E8-4F9F-83C0-39A21AF67B82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61AD7D7A-81E8-4F9F-83C0-39A21AF67B82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61AD7D7A-81E8-4F9F-83C0-39A21AF67B82}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{61AD7D7A-81E8-4F9F-83C0-39A21AF67B82} = {78B64605-9E51-4A03-999B-EAC44A48535B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AC565EA9-6CB8-48BD-ABDB-94AB61067AFF}
+	EndGlobalSection
+EndGlobal
