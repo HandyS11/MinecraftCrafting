@@ -11,7 +11,7 @@ using Minecraft.Crafting.Website.Services;
 
 namespace Minecraft.Crafting.Website.Pages
 {
-    public partial class Inventory
+    public partial class InventoryPage
     {
         [Inject]
         public IDataService DataService { get; set; }
@@ -19,7 +19,7 @@ namespace Minecraft.Crafting.Website.Pages
         [Inject]
         public IStringLocalizer<List> Localizer { get; set; }
 
-        [ParameterAttribute]
+
         public List<Item> Items { get; set; } = new List<Item>();
 
 
