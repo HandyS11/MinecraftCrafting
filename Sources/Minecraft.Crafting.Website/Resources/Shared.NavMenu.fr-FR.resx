@@ -123,4 +123,7 @@
   <data name="List" xml:space="preserve">
     <value>Liste</value>
   </data>
+  <data name="Inv" xml:space="preserve">
+    <value>Inventaire</value>
+  </data>
 </root>

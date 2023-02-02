@@ -117,13 +117,40 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Home" xml:space="preserve">
-    <value>Home</value>
+  <data name="Action" xml:space="preserve">
+    <value>Action</value>
   </data>
-  <data name="Inv" xml:space="preserve">
-    <value>Inventory</value>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
   </data>
-  <data name="List" xml:space="preserve">
-    <value>List</value>
+  <data name="Created_Date" xml:space="preserve">
+    <value>Created date</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Display_Name" xml:space="preserve">
+    <value>Display name</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Enchant_Categories" xml:space="preserve">
+    <value>Enchant categories</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="Maximum_Durability" xml:space="preserve">
+    <value>Maximum durability</value>
+  </data>
+  <data name="Repair_With" xml:space="preserve">
+    <value>Repair with</value>
+  </data>
+  <data name="Size_Stack" xml:space="preserve">
+    <value>Size stack</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Your inventorys</value>
   </data>
 </root>
