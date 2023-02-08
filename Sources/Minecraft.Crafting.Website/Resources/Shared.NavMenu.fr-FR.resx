@@ -120,10 +120,10 @@
   <data name="Home" xml:space="preserve">
     <value>Acceuil</value>
   </data>
-  <data name="List" xml:space="preserve">
-    <value>Liste</value>
+  <data name="Item_List" xml:space="preserve">
+    <value>Liste d'objet</value>
   </data>
-  <data name="Inv" xml:space="preserve">
+  <data name="Inventory" xml:space="preserve">
     <value>Inventaire</value>
   </data>
 </root>

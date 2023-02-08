@@ -1,11 +1,5 @@
-﻿using Blazored.LocalStorage;
-using Blazored.Modal;
-using Blazored.Modal.Services;
-using Blazorise.DataGrid;
-using Microsoft.AspNetCore.Components;
+﻿using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Localization;
-using Minecraft.Crafting.Website.Components;
-using Minecraft.Crafting.Website.Modals;
 using Minecraft.Crafting.Website.Models;
 using Minecraft.Crafting.Website.Services;
 
@@ -25,7 +19,7 @@ namespace Minecraft.Crafting.Website.Pages
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
-            base.OnAfterRenderAsync(firstRender);
+            _ = base.OnAfterRenderAsync(firstRender);
 
             if (!firstRender)
             {
