@@ -11,26 +11,26 @@ steps:
     image: mcr.microsoft.com/dotnet/sdk:6.0
     commands:
       - cd Sources/
-      - dotnet restore TPblazor.sln
-      - dotnet build TPblazor.sln -c Release --no-restore
+      - dotnet restore MinecraftCrafting.sln
+      - dotnet build MinecraftCrafting.sln -c Release --no-restore
 
   - name: tests
     image: mcr.microsoft.com/dotnet/sdk:6.0
     commands:
       - cd Sources/
-      - dotnet restore TPblazor.sln
-      - dotnet test TPblazor.sln -c Release --no-restore
+      - dotnet restore MinecraftCrafting.sln
+      - dotnet test MinecraftCrafting.sln -c Release --no-restore
 
   - name: code-analysis
     image: hub.codefirst.iut.uca.fr/thomas.bellembois/codefirst-dronesonarplugin-dotnet6
     commands:
       - cd Sources/
-      - dotnet restore TPblazor.sln
-      - dotnet sonarscanner begin /k:TPblazor /d:sonar.host.url=$${PLUGIN_SONAR_HOST} /d:sonar.coverageReportPaths="coveragereport/SonarQube.xml" /d:sonar.coverage.exclusions="Tests/**" /d:sonar.login=$${PLUGIN_SONAR_TOKEN} 
-      - dotnet build TPblazor.sln -c Release --no-restore
-      - dotnet test TPblazor.sln --logger trx --no-restore /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura --collect "XPlat Code Coverage"
+      - dotnet restore MinecraftCrafting.sln
+      - dotnet sonarscanner begin /k:MinecraftCrafting /d:sonar.host.url=$${PLUGIN_SONAR_HOST} /d:sonar.coverageReportPaths="coveragereport/SonarQube.xml" /d:sonar.coverage.exclusions="Tests/**" /d:sonar.login=$${PLUGIN_SONAR_TOKEN} 
+      - dotnet build MinecraftCrafting.sln -c Release --no-restore
+      - dotnet test MinecraftCrafting.sln --logger trx --no-restore /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura --collect "XPlat Code Coverage"
       - reportgenerator -reports:"**/coverage.cobertura.xml" -reporttypes:SonarQube -targetdir:"coveragereport"
-      - dotnet publish TPblazor.sln -c Release --no-restore -o $CI_PROJECT_DIR/build/release
+      - dotnet publish MinecraftCrafting.sln -c Release --no-restore -o $CI_PROJECT_DIR/build/release
       - dotnet sonarscanner end /d:sonar.login=$${PLUGIN_SONAR_TOKEN}
     secrets: [ SECRET_SONAR_LOGIN ]
     settings:
@@ -58,10 +58,10 @@ steps:
   - name: docker-build-website
     image: plugins/docker
     settings:
-       dockerfile: Sources/TPblazor/Dockerfile
+       dockerfile: Sources/Minecraft.Crafting.Website/Dockerfile
        context: .
        registry: hub.codefirst.iut.uca.fr
-       repo: hub.codefirst.iut.uca.fr/valentin.clergue/tpblazor.website
+       repo: hub.codefirst.iut.uca.fr/valentin.clergue/blazor.website
        username:
          from_secret: SECRET_REGISTRY_USERNAME
        password:
@@ -77,7 +77,7 @@ steps:
        dockerfile: Sources/Minecraft.Crafting.Api/Dockerfile
        context: .
        registry: hub.codefirst.iut.uca.fr
-       repo: hub.codefirst.iut.uca.fr/valentin.clergue/tpblazor.api
+       repo: hub.codefirst.iut.uca.fr/valentin.clergue/blazor.api
        username:
          from_secret: SECRET_REGISTRY_USERNAME
        password:
