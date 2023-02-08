@@ -25,7 +25,6 @@ builder.Services
 
 builder.Services.AddBlazoredLocalStorage();
 builder.Services.AddBlazoredModal();
-builder.Services.AddScoped<IDataService, DataLocalService>();
 
 // Add the controller of the app
 builder.Services.AddControllers();
