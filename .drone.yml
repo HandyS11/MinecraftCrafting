@@ -94,7 +94,7 @@ steps:
         CONTAINERNAME: blazorwebsite
         COMMAND: create
         OVERWRITE: true
-        CODEFIRST_CLIENTDRONE_ENV_HOST_URL: blazorapi
+        HOST_URL: https://codefirst.iut.uca.fr/containers/MinecraftCraftingCorp-blazorapi:80
         ADMINS: valentinclergue,yorickgeoffre
     when:
       branch:
