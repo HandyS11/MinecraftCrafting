@@ -95,7 +95,7 @@ steps:
         COMMAND: create
         OVERWRITE: true
         CODEFIRST_CLIENTDRONE_ENV_HOST_URL: https://codefirst.iut.uca.fr/containers/MinecraftCraftingCorp-blazorapi:80
-        CODEFIRST_CLIENTDRONE_ENV_STYLES_PATH: MinecraftCraftingCorp-blazorwebsite
+        CODEFIRST_CLIENTDRONE_ENV_STYLES_PATH: MinecraftCraftingCorp-blazorwebsite/
         ADMINS: valentinclergue,yorickgeoffre
     when:
       branch:
