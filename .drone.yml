@@ -95,7 +95,7 @@ steps:
         COMMAND: create
         OVERWRITE: true
         HOST_URL: https://codefirst.iut.uca.fr/containers/MinecraftCraftingCorp-blazorapi:80
-        STYLES_PATH: containers/MinecraftCraftingCorp-blazorwebsite
+        STYLES_PATH: MinecraftCraftingCorp-blazorwebsite
         ADMINS: valentinclergue,yorickgeoffre
     when:
       branch:
