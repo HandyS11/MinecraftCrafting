@@ -19,6 +19,8 @@
     @RenderBody()
 
     <div id="blazor-error-ui">
+        Path:
+        @_config["STYLES_PATH"]
         <environment include="Staging,Production">
             An error has occurred. This application may no longer respond until reloaded.
         </environment>
