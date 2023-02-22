@@ -23,8 +23,8 @@
 
 ## Links
 
-API -> https://codefirst.iut.uca.fr/containers/MinecraftCraftingCorp-blazorapi
-Website -> https://codefirst.iut.uca.fr/containers/MinecraftCraftingCorp-blazorwebsite
+- API -> https://codefirst.iut.uca.fr/containers/MinecraftCraftingCorp-blazorapi
+- Website -> https://codefirst.iut.uca.fr/containers/MinecraftCraftingCorp-blazorwebsite
 
 ## Features / Notation
 
@@ -39,7 +39,7 @@ Self evaluated.
 
 | Tasks | Points | Status |
 | --- | --- | --- |
-| **Blazor Apps** | 30 | [🟨]
+| 🔖 **Blazor Apps** | 30 | [🟨]
 | Implementation of a data visualization page with pagination | 2 | [🟩]
 | Page for adding an element with validation | 2 | [🟩]
 | Edit page of an element with validation | 2 | [🟩]
@@ -53,7 +53,7 @@ Self evaluated.
 | Code cleanliness (sonarqube) | 2 | [🟩]
 | GUI (Global design, placement of buttons, ...) | 2 | [🟦]
 | Code location (No code in views) | 2 | [🟩]
-| **Documentation** | 10 | [🟨]
+| 🔖 **Documentation** | 10 | [🟨]
 | The Readme | 2 | [🟨]
 | Description of how the client solution works (code-level illustration) | 6 | [🟥]
 | Merge request | 2 | [🟩]
