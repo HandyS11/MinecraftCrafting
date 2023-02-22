@@ -1,36 +1,64 @@
-[![Build Status](https://codefirst.iut.uca.fr/api/badges/TPblazorCorp/TPblazor/status.svg)](https://codefirst.iut.uca.fr/TPblazorCorp/TPblazor)
-[![Quality Gate Status](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=TPblazor&metric=alert_status&token=9e1f4645b86eb1abd678f85c330ad6047baebd85)](https://codefirst.iut.uca.fr/sonar/dashboard?id=TPblazor)
-[![Maintainability Rating](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=TPblazor&metric=sqale_rating&token=9e1f4645b86eb1abd678f85c330ad6047baebd85)](https://codefirst.iut.uca.fr/sonar/dashboard?id=TPblazor)
-[![Reliability Rating](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=TPblazor&metric=reliability_rating&token=9e1f4645b86eb1abd678f85c330ad6047baebd85)](https://codefirst.iut.uca.fr/sonar/dashboard?id=TPblazor)
-[![Security Rating](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=TPblazor&metric=security_rating&token=9e1f4645b86eb1abd678f85c330ad6047baebd85)](https://codefirst.iut.uca.fr/sonar/dashboard?id=TPblazor)
-[![Bugs](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=TPblazor&metric=bugs&token=9e1f4645b86eb1abd678f85c330ad6047baebd85)](https://codefirst.iut.uca.fr/sonar/dashboard?id=TPblazor)
-[![Technical Debt](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=TPblazor&metric=sqale_index&token=9e1f4645b86eb1abd678f85c330ad6047baebd85)](https://codefirst.iut.uca.fr/sonar/dashboard?id=TPblazor)
-[![Vulnerabilities](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=TPblazor&metric=vulnerabilities&token=9e1f4645b86eb1abd678f85c330ad6047baebd85)](https://codefirst.iut.uca.fr/sonar/dashboard?id=TPblazor)
-[![Code Smells](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=TPblazor&metric=code_smells&token=9e1f4645b86eb1abd678f85c330ad6047baebd85)](https://codefirst.iut.uca.fr/sonar/dashboard?id=TPblazor)
-[![Duplicated Lines (%)](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=TPblazor&metric=duplicated_lines_density&token=9e1f4645b86eb1abd678f85c330ad6047baebd85)](https://codefirst.iut.uca.fr/sonar/dashboard?id=TPblazor)
-[![Coverage](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=TPblazor&metric=coverage&token=9e1f4645b86eb1abd678f85c330ad6047baebd85)](https://codefirst.iut.uca.fr/sonar/dashboard?id=TPblazor)
-[![Lines of Code](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=TPblazor&metric=ncloc&token=9e1f4645b86eb1abd678f85c330ad6047baebd85)](https://codefirst.iut.uca.fr/sonar/dashboard?id=TPblazor)
+![Tag](https://img.shields.io/badge/MinecraftCrafting-v1-blueviolet)
+![Language](https://img.shields.io/github/languages/top/HandyS11/MinecraftCrafting)
 
-# TPblazor
+[![Build Status](https://codefirst.iut.uca.fr/api/badges/MinecraftCraftingCorp/MinecraftCrafting/status.svg)](https://codefirst.iut.uca.fr/MinecraftCraftingCorp/MinecraftCrafting)
+[![Quality Gate Status](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=MinecraftCrafting&metric=alert_status&token=382b9582e38e30bae288cd1b32937955206cacc4)](https://codefirst.iut.uca.fr/sonar/dashboard?id=MinecraftCrafting)
+[![Coverage](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=MinecraftCrafting&metric=coverage&token=382b9582e38e30bae288cd1b32937955206cacc4)](https://codefirst.iut.uca.fr/sonar/dashboard?id=MinecraftCrafting)
+[![Maintainability Rating](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=MinecraftCrafting&metric=sqale_rating&token=382b9582e38e30bae288cd1b32937955206cacc4)](https://codefirst.iut.uca.fr/sonar/dashboard?id=MinecraftCrafting)
+[![Reliability Rating](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=MinecraftCrafting&metric=reliability_rating&token=382b9582e38e30bae288cd1b32937955206cacc4)](https://codefirst.iut.uca.fr/sonar/dashboard?id=MinecraftCrafting)
+[![Security Rating](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=MinecraftCrafting&metric=security_rating&token=382b9582e38e30bae288cd1b32937955206cacc4)](https://codefirst.iut.uca.fr/sonar/dashboard?id=MinecraftCrafting)
 
-## Blazor Apps (30 points)
+[![Technical Debt](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=MinecraftCrafting&metric=sqale_index&token=382b9582e38e30bae288cd1b32937955206cacc4)](https://codefirst.iut.uca.fr/sonar/dashboard?id=MinecraftCrafting)
+[![Bugs](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=MinecraftCrafting&metric=bugs&token=382b9582e38e30bae288cd1b32937955206cacc4)](https://codefirst.iut.uca.fr/sonar/dashboard?id=MinecraftCrafting)
+[![Vulnerabilities](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=MinecraftCrafting&metric=vulnerabilities&token=382b9582e38e30bae288cd1b32937955206cacc4)](https://codefirst.iut.uca.fr/sonar/dashboard?id=MinecraftCrafting)
+[![Code Smells](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=MinecraftCrafting&metric=code_smells&token=382b9582e38e30bae288cd1b32937955206cacc4)](https://codefirst.iut.uca.fr/sonar/dashboard?id=MinecraftCrafting)
+[![Duplicated Lines (%)](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=MinecraftCrafting&metric=duplicated_lines_density&token=382b9582e38e30bae288cd1b32937955206cacc4)](https://codefirst.iut.uca.fr/sonar/dashboard?id=MinecraftCrafting)
+[![Lines of Code](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=MinecraftCrafting&metric=ncloc&token=382b9582e38e30bae288cd1b32937955206cacc4)](https://codefirst.iut.uca.fr/sonar/dashboard?id=MinecraftCrafting)
 
-- Implementation of a data visualization page with pagination (2 points)
-- Page for adding an element with validation (2 point)
-- Edit page of an element with validation (2 point)
-- Deletion of an element with a confirmation (2 point)
-- Complex component (5 point)
-- Use API (Get / Insert / Update / Delete) (3 point)
-- IOC & DI use (4 point)
-- Localization & Globalization (at least two languages) (1 point)
-- Use of the configuration (1 point)
-- Logs (2 points)
-- Code cleanliness (You can use sonarqube) (2 point)
-- GUI (Global design, placement of buttons, ...) (2 point)
-- Code location (No code in views) (2 point)
+# MinecraftCrafting
 
-## Documentation (10 points)
+## Getting started
 
-- The Readme (2 points)
-- Description of how the client solution works (code-level illustration) (6 points)
-- Merge request (2 points)
+...
+
+## Links
+
+API -> https://codefirst.iut.uca.fr/containers/MinecraftCraftingCorp-blazorapi
+Website -> https://codefirst.iut.uca.fr/containers/MinecraftCraftingCorp-blazorwebsite
+
+## Features / Notation
+
+Self evaluated.
+
+### Caption
+
+🟩 : Done
+🟨 : Partial
+🟥 : Not done
+🟦 : Unknown
+
+| Tasks | Points | Status |
+| --- | --- | --- |
+| **Blazor Apps** | 30 | [🟨]
+| Implementation of a data visualization page with pagination | 2 | [🟩]
+| Page for adding an element with validation | 2 | [🟩]
+| Edit page of an element with validation | 2 | [🟩]
+| Deletion of an element with a confirmation | 2 | [🟩]
+| Complex component | 5 | [🟦]
+| Use API (Get / Insert / Update / Delete) | 3 | [🟨]
+| IOC & DI use | 4 | [🟩]
+| Localization & Globalization (at least two languages) | 1 | [🟨]
+| Use of the configuration | 1 | [🟩]
+| Logs | 2 | [🟨]
+| Code cleanliness (sonarqube) | 2 | [🟩]
+| GUI (Global design, placement of buttons, ...) | 2 | [🟦]
+| Code location (No code in views) | 2 | [🟩]
+| **Documentation** | 10 | [🟨]
+| The Readme | 2 | [🟨]
+| Description of how the client solution works (code-level illustration) | 6 | [🟥]
+| Merge request | 2 | [🟩]
+
+## Credits
+
+* Co-author: [**Valetin Clergue**](https://github.com/HandyS11)
+* Co-author: [**Yorick Geoffre**](https://github.com/Kanken6174)
