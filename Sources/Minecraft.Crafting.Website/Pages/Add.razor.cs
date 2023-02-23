@@ -9,7 +9,7 @@ namespace Minecraft.Crafting.Website.Pages
     public partial class Add
     {
         [Inject]
-        public ILogger<ErrorModel> Logger { get; set; }
+        public ILogger<LogModel> Logger { get; set; }
 
         /// <summary>
         /// The default enchant categories.
