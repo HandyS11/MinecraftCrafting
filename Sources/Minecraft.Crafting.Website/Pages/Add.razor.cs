@@ -11,6 +11,9 @@ namespace Minecraft.Crafting.Website.Pages
         [Inject]
         public IStringLocalizer<Add> Localizer { get; set; }
 
+        [Inject]
+        public ILogger<LogModel> Logger { get; set; }
+
         /// <summary>
         /// The default enchant categories.
         /// </summary>

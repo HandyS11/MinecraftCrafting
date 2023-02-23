@@ -8,6 +8,9 @@ namespace Minecraft.Crafting.Website.Pages
     public partial class InventoryPage
     {
         [Inject]
+        public ILogger<LogModel> Logger { get; set; }
+
+        [Inject]
         public IDataService DataService { get; set; }
 
         [Inject]
