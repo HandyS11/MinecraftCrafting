@@ -117,34 +117,40 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Add" xml:space="preserve">
-    <value>Ajouter</value>
+  <data name="blabla" xml:space="preserve">
+    <value>L'environnement de Développement ne doit pas être utilisé en Production.</value>
   </data>
-  <data name="Created_Date" xml:space="preserve">
-    <value>Date de création</value>
+  <data name="Development" xml:space="preserve">
+    <value>Développement</value>
   </data>
-  <data name="Delete" xml:space="preserve">
-    <value>Supprimer</value>
+  <data name="Development_mode" xml:space="preserve">
+    <value>Mode de développement</value>
   </data>
-  <data name="Display_Name" xml:space="preserve">
-    <value>Nom</value>
+  <data name="env_by" xml:space="preserve">
+    <value>en définissant la </value>
   </data>
-  <data name="Edit" xml:space="preserve">
-    <value>Mettre à jour</value>
+  <data name="env_va" xml:space="preserve">
+    <value>variable d'environnement à </value>
   </data>
-  <data name="Enchant_Categories" xml:space="preserve">
-    <value>Catégorie d'enchantement</value>
+  <data name="Error_message" xml:space="preserve">
+    <value>Une erreur est survenu lors de l'exécution de votre requête.</value>
   </data>
-  <data name="Maximum_Durability" xml:space="preserve">
-    <value>Durabilité maximale</value>
+  <data name="Error_title" xml:space="preserve">
+    <value>Erreur.</value>
   </data>
-  <data name="Repair_With" xml:space="preserve">
-    <value>Se répare avec</value>
+  <data name="Request_id" xml:space="preserve">
+    <value>Id de la requête :</value>
   </data>
-  <data name="Size_Stack" xml:space="preserve">
-    <value>Taille de pille</value>
+  <data name="restart" xml:space="preserve">
+    <value>et relance l'appli.</value>
   </data>
-  <data name="Title" xml:space="preserve">
-    <value>Liste des objects</value>
+  <data name="some_text" xml:space="preserve">
+    <value>Il peut arriver que des informations sensibles soient affichées aux utilisateurs lambda. Pour un debugage local, active la</value>
+  </data>
+  <data name="Swap" xml:space="preserve">
+    <value>Change l'environnement en</value>
+  </data>
+  <data name="this_is_why" xml:space="preserve">
+    <value>pour afficher des détails précis sur l'erreur.</value>
   </data>
 </root>

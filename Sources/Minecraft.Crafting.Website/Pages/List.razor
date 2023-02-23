@@ -1,5 +1,4 @@
 ﻿@page "/list"
-@using Minecraft.Crafting.Website.Models
 
 <h3>@Localizer["Title"]</h3>
 
@@ -13,7 +12,7 @@
           Data="@items"
           ReadData="@OnReadData"
           TotalItems="@totalItem"
-          PageSize="10"
+          PageSize="15"
           ShowPager
           Responsive>
     <DataGridColumn TItem="Item" Field="@nameof(Item.Id)" Caption="#" />

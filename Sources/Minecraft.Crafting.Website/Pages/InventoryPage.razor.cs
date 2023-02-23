@@ -8,12 +8,13 @@ namespace Minecraft.Crafting.Website.Pages
     public partial class InventoryPage
     {
         [Inject]
+        public ILogger<LogModel> Logger { get; set; }
+
+        [Inject]
         public IDataService DataService { get; set; }
 
         [Inject]
-        public IStringLocalizer<List> Localizer { get; set; }
-        [Inject]
-        public ILogger<LogModel> Logger { get; set; }
+        public IStringLocalizer<InventoryPage> Localizer { get; set; }
 
         public List<Item> Items { get; set; } = new List<Item>();
 
