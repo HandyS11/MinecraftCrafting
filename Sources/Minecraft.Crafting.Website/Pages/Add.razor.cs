@@ -8,6 +8,9 @@ namespace Minecraft.Crafting.Website.Pages
 {
     public partial class Add
     {
+        [Inject]
+        public ILogger<ErrorModel> Logger { get; set; }
+
         /// <summary>
         /// The default enchant categories.
         /// </summary>
@@ -42,6 +45,7 @@ namespace Minecraft.Crafting.Website.Pages
 
         private async Task LoadImage(InputFileChangeEventArgs e)
         {
+            Logger.Log(LogLevel.Trace, "Loaded image", e);
             // Set the content of the image to the model
             using (var memoryStream = new MemoryStream())
             {
@@ -70,6 +74,7 @@ namespace Minecraft.Crafting.Website.Pages
 
         private void OnRepairWithChange(string item, object checkedValue)
         {
+            Logger.Log(LogLevel.Trace, "OnRepairWithChange", item, checkedValue);
             if ((bool)checkedValue)
             {
                 if (!itemModel.RepairWith.Contains(item))
