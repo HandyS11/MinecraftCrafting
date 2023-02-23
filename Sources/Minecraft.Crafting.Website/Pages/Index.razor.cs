@@ -20,7 +20,7 @@ namespace Minecraft.Crafting.Website.Pages
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
-            await base.OnAfterRenderAsync(firstRender);
+            base.OnAfterRenderAsync(firstRender);
 
             if (!firstRender)
             {

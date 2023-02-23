@@ -43,10 +43,14 @@ namespace Minecraft.Crafting.Website.Pages
         [Inject]
         public IWebHostEnvironment WebHostEnvironment { get; set; }
 
+        [Inject]
+        public ILogger<LogModel> Logger { get; set; }
+
         protected override async Task OnInitializedAsync()
         {
+            Logger.Log(LogLevel.Information, "Edit OnInitializedAsync");
             var item = await DataService.GetById(Id);
-
+            Logger.Log(LogLevel.Information, "Edit OnInitializedAsync got item: "+item.DisplayName, item);
             var fileContent = await File.ReadAllBytesAsync($"{WebHostEnvironment.WebRootPath}/images/default.png");
 
             // Set the model with the item
@@ -55,13 +59,15 @@ namespace Minecraft.Crafting.Website.Pages
 
         private async void HandleValidSubmit()
         {
+            Logger.Log(LogLevel.Information, "Edit HandleValidSubmit");
             await DataService.Update(Id, itemModel);
-
+            Logger.Log(LogLevel.Information, "Edit HandleValidSubmit done, navigating to 'list'");
             NavigationManager.NavigateTo("list");
         }
 
         private async Task LoadImage(InputFileChangeEventArgs e)
         {
+            Logger.Log(LogLevel.Information, "Edit LoadImage");
             // Set the content of the image to the model
             using (var memoryStream = new MemoryStream())
             {
@@ -72,6 +78,7 @@ namespace Minecraft.Crafting.Website.Pages
 
         private void OnEnchantCategoriesChange(string item, object checkedValue)
         {
+            Logger.Log(LogLevel.Information, "Edit OnEnchantCategoriesChange");
             if ((bool)checkedValue)
             {
                 if (!itemModel.EnchantCategories.Contains(item))
@@ -90,6 +97,7 @@ namespace Minecraft.Crafting.Website.Pages
 
         private void OnRepairWithChange(string item, object checkedValue)
         {
+            Logger.Log(LogLevel.Information, "Edit OnRepairWithChange");
             if ((bool)checkedValue)
             {
                 if (!itemModel.RepairWith.Contains(item))

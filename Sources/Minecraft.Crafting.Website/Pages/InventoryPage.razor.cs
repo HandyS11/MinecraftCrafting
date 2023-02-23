@@ -13,13 +13,13 @@ namespace Minecraft.Crafting.Website.Pages
         [Inject]
         public IStringLocalizer<InventoryPage> Localizer { get; set; }
 
-
         public List<Item> Items { get; set; } = new List<Item>();
 
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
             _ = base.OnAfterRenderAsync(firstRender);
+            Logger.Log(LogLevel.Information, "InventoryPage OnAfterRenderAsync", firstRender);
 
             if (!firstRender)
             {
@@ -27,6 +27,8 @@ namespace Minecraft.Crafting.Website.Pages
             }
 
             Items = await DataService.List(0, await DataService.Count());
+
+            Logger.Log(LogLevel.Information, "InventoryPage OnAfterRenderAsync loaded items: "+Items.Count, Items);
 
             StateHasChanged();
         }
