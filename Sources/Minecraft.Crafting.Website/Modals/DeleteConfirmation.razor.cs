@@ -3,11 +3,15 @@ using Blazored.Modal;
 using Microsoft.AspNetCore.Components;
 using Minecraft.Crafting.Website.Models;
 using Minecraft.Crafting.Website.Services;
+using Microsoft.Extensions.Localization;
 
 namespace Minecraft.Crafting.Website.Modals
 {
     public partial class DeleteConfirmation
     {
+        [Inject]
+        public IStringLocalizer<DeleteConfirmation> Localizer { get; set; }
+
         [CascadingParameter]
         public BlazoredModalInstance ModalInstance { get; set; }
 

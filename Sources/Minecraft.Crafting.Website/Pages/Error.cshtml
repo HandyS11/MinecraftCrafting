@@ -1,5 +1,10 @@
 ﻿@page
+
+@using Microsoft.Extensions.Localization;
+@using Minecraft.Crafting.Website.Pages;
+
 @model Minecraft.Crafting.Website.Pages.ErrorModel
+@inject IStringLocalizer<ErrorModel> Localizer
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,25 +20,24 @@
 <body>
     <div class="main">
         <div class="content px-4">
-            <h1 class="text-danger">Error.</h1>
-            <h2 class="text-danger">An error occurred while processing your request.</h2>
+            <h1 class="text-danger">@Localizer["Error_title"]</h1>
+            <h2 class="text-danger">@Localizer["Error_message"]</h2>
 
             @if (Model.ShowRequestId)
             {
                 <p>
-                    <strong>Request ID:</strong> <code>@Model.RequestId</code>
+                    <strong>@Localizer["Request_id"]</strong> <code>@Model.RequestId</code>
                 </p>
             }
 
-            <h3>Development Mode</h3>
+            <h3>@Localizer["Development_mode"]</h3>
             <p>
-                Swapping to the <strong>Development</strong> environment displays detailed information about the error that occurred.
+                @Localizer["Swap"] <strong>@Localizer["Development"]</strong> @Localizer["this_is_why"]
             </p>
             <p>
-                <strong>The Development environment shouldn't be enabled for deployed applications.</strong>
-                It can result in displaying sensitive information from exceptions to end users.
-                For local debugging, enable the <strong>Development</strong> environment by setting the <strong>ASPNETCORE_ENVIRONMENT</strong> environment variable to <strong>Development</strong>
-                and restarting the app.
+                <strong>@Localizer["blabla"]</strong> 
+                @Localizer["some_text"] <strong>@Localizer["Development"]</strong> @Localizer["env_by"] 
+                <strong>ASPNETCORE_ENVIRONMENT</strong> @Localizer["env_va"] <strong>@Localizer["Development"]</strong> @Localizer["restart"]
             </p>
         </div>
     </div>
