@@ -11,7 +11,7 @@ namespace Minecraft.Crafting.Website.Pages
         public IDataService DataService { get; set; }
 
         [Inject]
-        public IStringLocalizer<List> Localizer { get; set; }
+        public IStringLocalizer<InventoryPage> Localizer { get; set; }
 
 
         public List<Item> Items { get; set; } = new List<Item>();

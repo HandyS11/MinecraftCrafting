@@ -1,22 +1,25 @@
-﻿using Blazored.LocalStorage;
-using Microsoft.AspNetCore.Components.Forms;
+﻿using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Components;
 using Minecraft.Crafting.Website.Models;
 using Minecraft.Crafting.Website.Services;
+using Microsoft.Extensions.Localization;
 
 namespace Minecraft.Crafting.Website.Pages
 {
     public partial class Add
     {
+        [Inject]
+        public IStringLocalizer<Add> Localizer { get; set; }
+
         /// <summary>
         /// The default enchant categories.
         /// </summary>
-        private List<string> enchantCategories = new List<string>() { "armor", "armor_head", "armor_chest", "weapon", "digger", "breakable", "vanishable" };
+        private readonly List<string> enchantCategories = new() { "armor", "armor_head", "armor_chest", "weapon", "digger", "breakable", "vanishable" };
 
         /// <summary>
         /// The current item model
         /// </summary>
-        private ItemModel itemModel = new()
+        private readonly ItemModel itemModel = new()
         {
             EnchantCategories = new List<string>(),
             RepairWith = new List<string>()
@@ -25,7 +28,7 @@ namespace Minecraft.Crafting.Website.Pages
         /// <summary>
         /// The default repair with.
         /// </summary>
-        private List<string> repairWith = new List<string>() { "oak_planks", "spruce_planks", "birch_planks", "jungle_planks", "acacia_planks", "dark_oak_planks", "crimson_planks", "warped_planks" };
+        private readonly List<string> repairWith = new() { "oak_planks", "spruce_planks", "birch_planks", "jungle_planks", "acacia_planks", "dark_oak_planks", "crimson_planks", "warped_planks" };
 
         [Inject]
         public IDataService DataService { get; set; }

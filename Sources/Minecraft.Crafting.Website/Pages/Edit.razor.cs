@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
+using Microsoft.Extensions.Localization;
 using Minecraft.Crafting.Website.Factories;
 using Minecraft.Crafting.Website.Models;
 using Minecraft.Crafting.Website.Services;
@@ -8,6 +9,9 @@ namespace Minecraft.Crafting.Website.Pages
 {
     public partial class Edit
     {
+        [Inject]
+        public IStringLocalizer<Edit> Localizer { get; set; }
+
         [Parameter]
         public int Id { get; set; }
 
