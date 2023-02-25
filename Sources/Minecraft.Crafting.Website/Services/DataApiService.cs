@@ -9,6 +9,9 @@ namespace Minecraft.Crafting.Website.Services
     {
         private readonly HttpClient _http;
         private readonly string host;
+        private int lastCount = 0;
+
+        public int getLastCount() => lastCount;
 
         public DataApiService(HttpClient http, IConfiguration configuration)
         {
@@ -32,7 +35,17 @@ namespace Minecraft.Crafting.Website.Services
 
         public async Task<List<Item>> List(int currentPage, int pageSize)
         {
-            return await _http.GetFromJsonAsync<List<Item>>($"{host}api/Crafting/?currentPage={currentPage}&pageSize={pageSize}");
+            List<Item> aa = await _http.GetFromJsonAsync<List<Item>>($"{host}api/Crafting/?currentPage={currentPage}&pageSize={pageSize}");
+            lastCount = aa.Count;
+            return aa;
+        }
+
+        public async Task<List<Item>> ListSearch(int currentPage, int pageSize, string searchBy)
+        {
+            List<Item> aa = await _http.GetFromJsonAsync<List<Item>>($"{host}api/Crafting/All");
+            aa = aa.Where(item => item.DisplayName.ToLower().Contains(searchBy.ToLower())).ToList();
+            lastCount = aa.Count;
+            return aa.Skip((currentPage - 1) * pageSize).Take(pageSize).ToList();
         }
 
         public async Task<Item> GetById(int id)

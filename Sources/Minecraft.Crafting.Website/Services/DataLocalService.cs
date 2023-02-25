@@ -137,5 +137,15 @@ namespace Minecraft.Crafting.Website.Services
 
             return Task.FromResult(items);
         }
+
+        public Task<List<Item>> ListSearch(int currentPage, int pageSize, string searchBy)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int getLastCount()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

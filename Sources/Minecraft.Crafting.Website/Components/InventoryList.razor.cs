@@ -8,6 +8,7 @@ using Minecraft.Crafting.Website.Modals;
 using Minecraft.Crafting.Website.Models;
 using Minecraft.Crafting.Website.Pages;
 using Minecraft.Crafting.Website.Services;
+using System.ComponentModel;
 
 namespace Minecraft.Crafting.Website.Components
 {
@@ -16,6 +17,8 @@ namespace Minecraft.Crafting.Website.Components
         public List<Item> items { get; set; }
 
         private int totalItem;
+        [Bindable(true)]
+        public string searchText { get; set; } = "";
 
         [Inject]
         public IStringLocalizer<List> Localizer { get; set; }
@@ -73,7 +76,6 @@ namespace Minecraft.Crafting.Website.Components
             }
 
             var currentData = await LocalStorage.GetItemAsync<Item[]>("data");
-
             // Check if data exist in the local storage
             if (currentData == null)
             {
@@ -96,10 +98,16 @@ namespace Minecraft.Crafting.Website.Components
             if (!e.CancellationToken.IsCancellationRequested)
             {
                 Logger.Log(LogLevel.Information, "OnReadData NOT CancellationRequested");
-                items = await DataService.List(e.Page, e.PageSize);
+                items = await DataService.ListSearch(e.Page, e.PageSize, searchText);
                 totalItem = await DataService.Count();
                 Logger.Log(LogLevel.Information, "OnReadData items loaded: " + totalItem, totalItem);
             }
+        }
+
+        public async Task SearchClicked()
+        {
+            items = await DataService.ListSearch(0, 10, searchText);
+            totalItem = DataService.getLastCount();
         }
     }
 }
