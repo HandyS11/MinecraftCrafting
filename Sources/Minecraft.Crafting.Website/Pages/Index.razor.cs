@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Localization;
 using Minecraft.Crafting.Website.Components;
 using Minecraft.Crafting.Website.Models;
@@ -14,6 +15,12 @@ namespace Minecraft.Crafting.Website.Pages
         [Inject]
         public IDataService DataService { get; set; }
 
+        [Inject]
+        public ILogger<LogModel> lm { get; set; }
+
+        [Inject]
+        public IConfiguration configuration { get; set; }
+
         public List<Item> Items { get; set; } = new List<Item>();
 
         private List<CraftingRecipe> Recipes { get; set; } = new List<CraftingRecipe>();
@@ -21,6 +28,7 @@ namespace Minecraft.Crafting.Website.Pages
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
             base.OnAfterRenderAsync(firstRender);
+            lm?.Log(LogLevel.Information, "now running Index on host: " + configuration["API_URL"]);
 
             if (!firstRender)
             {
