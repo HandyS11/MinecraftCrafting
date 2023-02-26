@@ -3,6 +3,11 @@ using Microsoft.JSInterop;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using Minecraft.Crafting.Website.Models;
+using Microsoft.Extensions.Logging;
+using static System.Net.WebRequestMethods;
+using Minecraft.Crafting.Website.Pages;
+using Minecraft.Crafting.Website.Services;
+using Blazored.LocalStorage;
 
 namespace Minecraft.Crafting.Website.Components
 {
@@ -18,18 +23,39 @@ namespace Minecraft.Crafting.Website.Components
             public ObservableCollection<CraftingAction> Actions { get; set; }
             public Item CurrentDragItem { get; set; }
 
-            [Parameter]
+            //[Parameter]
             public List<Item> Items { get; set; }
 
-            /// <summary>
-            /// Gets or sets the java script runtime.
-            /// </summary>
             [Inject]
-            internal IJSRuntime JavaScriptRuntime { get; set; }
+            public IDataService DataService { get; set; }
+            [Inject]
+            public ILogger<LogModel> Logger { get; set; }
+            [Inject]
+            public HttpClient Http { get; set; }
 
-            private void OnActionsCollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
+            [Inject]
+            public ILocalStorageService LocalStorage { get; set; }
+            [Inject]
+            public NavigationManager NavigationManager { get; set; }
+
+        protected override async Task OnAfterRenderAsync(bool firstRender)
             {
-                JavaScriptRuntime.InvokeVoidAsync("Crafting.AddActions", e.NewItems);
+                // Do not treat this action if is not the first render
+                if (!firstRender)
+                {
+                    return;
+                }
+
+                var currentData = await LocalStorage.GetItemAsync<Item[]>("inventory");
+                // Check if data exist in the local storage
+                if (currentData == null)
+                {
+                    Logger.Log(LogLevel.Information, "OnAfterRenderAsync currentData was null (excpected)", currentData);
+                    // this code add in the local storage the fake data (we load the data sync for initialize the data before load the OnReadData method)
+                    var originalData = Http.GetFromJsonAsync<Item[]>($"{NavigationManager.BaseUri}fake-data.json").Result;
+                    await LocalStorage.SetItemAsync("data", originalData);
+                }
+                Logger.Log(LogLevel.Information, "OnAfterRenderAsync got data: " + currentData.Length, currentData);
             }
        }
 
