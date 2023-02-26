@@ -1,22 +1,7 @@
 [
   {
-    "itemName": "grass",
-    "numberItem": 64,
-    "position": 15
-  },
-  {
-    "itemName": "dirt",
+    "itemName": "cobblestone",
     "numberItem": 64,
     "position": 17
-  },
-  {
-    "itemName": "dirt",
-    "numberItem": 64,
-    "position": 16
-  },
-  {
-    "itemName": "grass",
-    "numberItem": 64,
-    "position": 15
   }
 ]

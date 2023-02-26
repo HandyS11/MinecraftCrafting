@@ -107,12 +107,13 @@ namespace Minecraft.Crafting.Website.Components
             {
                 return;
             }
-            inventoryService.RemoveFromInventory(CommonParent.CurrentDragItem.IItem);
+            //inventoryService.RemoveFromInventory(CommonParent.CurrentDragItem.IItem);
             CommonParent.OnDragend();
         }
 
         public void empty()
         {
+            inventoryService.RemoveFromInventory(IItem);
             Item = null;
         }
 

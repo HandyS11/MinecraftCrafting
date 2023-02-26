@@ -1,6 +1,8 @@
 ﻿using Minecraft.Crafting.Api.Models;
 using Minecraft.Crafting.Website.Factories;
 using Minecraft.Crafting.Website.Models;
+using Newtonsoft.Json;
+using System.Text;
 
 namespace Minecraft.Crafting.Website.Services
 {
@@ -30,12 +32,17 @@ namespace Minecraft.Crafting.Website.Services
 
         public async Task RemoveFromInventory(InventoryModel i)
         {
-            await _http.DeleteAsync($"{host}api/Inventory/");
+            var request = new HttpRequestMessage
+            {
+                Method = HttpMethod.Delete,
+                RequestUri = new Uri($"{host}api/Inventory/"),
+                Content = new StringContent(JsonConvert.SerializeObject(i), Encoding.UTF8, "application/json")
+            };
+            var response = await _http.SendAsync(request);
         }
 
         public async Task UpdateInventory(InventoryModel i)
         {
-
             await _http.PutAsJsonAsync($"{host}api/Inventory/", i);
         }
     }
