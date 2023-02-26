@@ -115,5 +115,10 @@ namespace Minecraft.Crafting.Website.Components
         {
             Item = null;
         }
+
+        public void forceRefresh()
+        {
+            StateHasChanged();
+        }
     }
 }

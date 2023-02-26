@@ -39,7 +39,9 @@ namespace Minecraft.Crafting.Api.Controllers
         {
             if (!System.IO.File.Exists(@"Data/inventory.json"))
             {
-                System.IO.File.Create(@"Data/inventory.json");
+                System.IO.File.Create(@"Data/inventory.json").Close();
+                var ddata = new List<InventoryModel>();
+                System.IO.File.WriteAllText("Data/inventory.json", JsonSerializer.Serialize(ddata, _jsonSerializerOptions));
             }
             var data = JsonSerializer.Deserialize<List<InventoryModel>>(System.IO.File.ReadAllText("Data/inventory.json"), _jsonSerializerOptions);
 

@@ -37,6 +37,7 @@ namespace Minecraft.Crafting.Website.Pages
             {
                 uiItems[l.Position].IItem = l;
                 uiItems[l.Position].Item = items.First(it => it.Name == l.ItemName);
+                uiItems[l.Position].forceRefresh();
             }
         }
 
