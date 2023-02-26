@@ -1,7 +1,12 @@
 [
   {
+    "itemName": "grass",
+    "numberItem": 64,
+    "position": 8
+  },
+  {
     "itemName": "cobblestone",
     "numberItem": 64,
-    "position": 17
+    "position": 8
   }
 ]

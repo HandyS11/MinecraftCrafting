@@ -87,7 +87,7 @@ namespace Minecraft.Crafting.Website.Components
                 {
                     IItem = CommonParent.CurrentDragItem.IItem;
                     IItem.Position = this.Index;
-                    inventoryService.UpdateInventory(IItem);
+                    inventoryService.AddToInventory(IItem);
                 }
 
                 CommonParent.OnDragend();
@@ -113,8 +113,12 @@ namespace Minecraft.Crafting.Website.Components
 
         public void empty()
         {
-            inventoryService.RemoveFromInventory(IItem);
-            Item = null;
+            if (IItem != null)
+            {
+                IItem.Position = Index;
+                inventoryService.RemoveFromInventory(IItem);
+                Item = null;
+            }
         }
 
         public void forceRefresh()
