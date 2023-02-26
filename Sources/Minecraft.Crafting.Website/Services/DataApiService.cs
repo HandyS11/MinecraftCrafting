@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Components;
-using Minecraft.Crafting.Website.Components;
+﻿using Minecraft.Crafting.Website.Components;
 using Minecraft.Crafting.Website.Factories;
 using Minecraft.Crafting.Website.Models;
 
@@ -33,19 +32,41 @@ namespace Minecraft.Crafting.Website.Services
             return await _http.GetFromJsonAsync<int>(host + "api/Crafting/count");
         }
 
-        public async Task<List<Item>> List(int currentPage, int pageSize)
+        public async Task<List<Item>> List(int currentPage, int pageSize, bool orderByName = false)
         {
-            List<Item> aa = await _http.GetFromJsonAsync<List<Item>>($"{host}api/Crafting/?currentPage={currentPage}&pageSize={pageSize}");
-            lastCount = aa.Count;
-            return aa;
+            // It should be great to implement a brand new method in the API
+            // Old way with not sort: List<Item> aa = await _http.GetFromJsonAsync<List<Item>>($"{host}api/Crafting/?currentPage={currentPage}&pageSize={pageSize}");
+            var itemList = await _http.GetFromJsonAsync<List<Item>>($"{host}api/Crafting/All");
+            List<Item> items = itemList.ToList();
+            if (items.Count < 0)
+            {
+                return new List<Item>();
+            }
+            var result = items;
+            if (orderByName)
+            {
+                result = items.OrderBy(item => item.DisplayName).ToList();
+            }
+            lastCount = result.Count;
+            return result.Skip((currentPage - 1) * pageSize).Take(pageSize).ToList();
         }
 
-        public async Task<List<Item>> ListSearch(int currentPage, int pageSize, string searchBy)
+        public async Task<List<Item>> ListSearch(int currentPage, int pageSize, string searchBy, bool orderByName = false)
         {
-            List<Item> aa = await _http.GetFromJsonAsync<List<Item>>($"{host}api/Crafting/All");
-            aa = aa.Where(item => item.DisplayName.ToLower().Contains(searchBy.ToLower())).ToList();
-            lastCount = aa.Count;
-            return aa.Skip((currentPage - 1) * pageSize).Take(pageSize).ToList();
+            // It should be great to implement a brand new method in the API
+            var itemList = await _http.GetFromJsonAsync<List<Item>>($"{host}api/Crafting/All");
+            List<Item> itemFilterList = itemList.Where(item => item.DisplayName.ContainsIgnoreCase(searchBy)).ToList();
+            if (itemFilterList.Count < 0)
+            {
+                return new List<Item>();
+            }
+            var result = itemFilterList;
+            if (orderByName)
+            {
+                result = itemFilterList.OrderBy(item => item.DisplayName).ToList();
+            }
+            lastCount = result.Count;
+            return result.Skip((currentPage - 1) * pageSize).Take(pageSize).ToList();
         }
 
         public async Task<Item> GetById(int id)

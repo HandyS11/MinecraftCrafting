@@ -50,7 +50,7 @@ namespace Minecraft.Crafting.Website.Services
             return (await _localStorage.GetItemAsync<Item[]>("data")).Length;
         }
 
-        public async Task<List<Item>> List(int currentPage, int pageSize)
+        public async Task<List<Item>> List(int currentPage, int pageSize, bool orderByName = false)
         {
             // Load data from the local storage
             var currentData = await _localStorage.GetItemAsync<Item[]>("data");
@@ -138,7 +138,7 @@ namespace Minecraft.Crafting.Website.Services
             return Task.FromResult(items);
         }
 
-        public Task<List<Item>> ListSearch(int currentPage, int pageSize, string searchBy)
+        public Task<List<Item>> ListSearch(int currentPage, int pageSize, string searchBy, bool orderByName = false)
         {
             throw new NotImplementedException();
         }
