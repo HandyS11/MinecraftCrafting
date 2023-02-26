@@ -13,5 +13,19 @@ namespace Minecraft.Crafting.Website.Pages
         [Inject]
         public ILogger<LogModel> Logger { get; set; }
 
+        public Item CurrentDragItem { get; private set; }
+        public Boolean Dragging { get; private set; } = false;
+
+        public void OnDragbegin(Item i)
+        {
+            CurrentDragItem = i;
+            Dragging= true;
+        }
+
+        public void OnDragend()
+        {
+            CurrentDragItem = null;
+            Dragging= false;
+        }
     }
 }

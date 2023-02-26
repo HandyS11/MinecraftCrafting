@@ -2,7 +2,7 @@
      ondragover="event.preventDefault();"
      draggable="true"
      @ondragstart="@OnDragStart"
-     @ondrop="@OnDrop"
+     @ondrop="@(e => OnDrop(e))"
      @ondragenter="@(e => OnDragEnter(e))"
      @ondragleave="@OnDragLeave">
 

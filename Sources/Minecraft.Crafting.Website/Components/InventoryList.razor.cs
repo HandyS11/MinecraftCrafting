@@ -14,7 +14,11 @@ namespace Minecraft.Crafting.Website.Components
 {
     public partial class InventoryList
     {
+        public Item CurrentDragItem { get; set; }
         public List<Item> items { get; set; }
+
+        [Parameter]
+        public InventoryPage Parent { get; set; }
 
         private int totalItem;
         [Bindable(true)]

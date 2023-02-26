@@ -8,14 +8,14 @@
                     <div class="css-grid">
                         @for (int j = 0; j < 3*9; j++)
                         {
-                            <InventoryItem Index="j"/>
+                            <InventoryItem CommonParent="this.Parent" Index="j"/>
                         }
                     </div>
                     <br/><br/><br/>
                     <div class="css-grid">
                         @for (int j = 0; j < 9; j++)
                         {
-                            <InventoryItem Index="j+3*9" />
+                            <InventoryItem CommonParent="this.Parent" Index="j+3*9" />
                         }
                     </div>
                 </div>

@@ -19,7 +19,9 @@ namespace Minecraft.Crafting.Website.Components
             }
 
             public ObservableCollection<CraftingAction> Actions { get; set; }
-            public Item CurrentDragItem { get; set; }
+
+            [Parameter]
+            public InventoryPage Parent { get; set; }
 
             //[Parameter]
             public List<Item> Items { get; set; }

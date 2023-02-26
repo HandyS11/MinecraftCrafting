@@ -14,15 +14,7 @@
     <DataGridColumn TItem="Item" Field="@nameof(Item.Id)" Caption="#" />
     <DataGridColumn TItem="Item" Field="@nameof(Item.Id)" Caption=@Localizer["Image"]>
         <DisplayTemplate>
-            @if (!string.IsNullOrWhiteSpace(context.ImageBase64))
-            {
-                <InventoryItem Item="this.items.FirstOrDefault()" NoDrop="false" />
-                //<img src="data:image/png;base64, @(context.ImageBase64)" class="img-thumbnail" title="@context.DisplayName" alt="@context.DisplayName" style="min-width: 50px; max-width: 150px" />
-            }
-            else
-            {
-                <img src="images/default.png" class="img-thumbnail" title="@context.DisplayName" alt="@context.DisplayName" style="max-width: 150px" />
-            }
+                <InventoryItem CommonParent="this.Parent" Item="context" NoDrop="false" />
         </DisplayTemplate>
     </DataGridColumn>
     <DataGridColumn TItem="Item" Field="@nameof(Item.DisplayName)" Caption=@Localizer["Display_Name"] />
