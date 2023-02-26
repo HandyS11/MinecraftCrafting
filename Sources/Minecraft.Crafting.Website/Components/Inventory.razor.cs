@@ -16,8 +16,6 @@ namespace Minecraft.Crafting.Website.Components
 
             public Inventory()
             {
-                Actions = new ObservableCollection<CraftingAction>();
-                Actions.CollectionChanged += OnActionsCollectionChanged;
             }
 
             public ObservableCollection<CraftingAction> Actions { get; set; }
@@ -27,7 +25,7 @@ namespace Minecraft.Crafting.Website.Components
             public List<Item> Items { get; set; }
 
             [Inject]
-            public IDataService DataService { get; set; }
+            public IInventoryService InventoryService { get; set; }
             [Inject]
             public ILogger<LogModel> Logger { get; set; }
             [Inject]
@@ -46,7 +44,7 @@ namespace Minecraft.Crafting.Website.Components
                     return;
                 }
 
-                var currentData = await LocalStorage.GetItemAsync<Item[]>("inventory");
+                var currentData = await InventoryService.GetAll();
                 // Check if data exist in the local storage
                 if (currentData == null)
                 {
@@ -55,7 +53,8 @@ namespace Minecraft.Crafting.Website.Components
                     var originalData = Http.GetFromJsonAsync<Item[]>($"{NavigationManager.BaseUri}fake-data.json").Result;
                     await LocalStorage.SetItemAsync("data", originalData);
                 }
-                Logger.Log(LogLevel.Information, "OnAfterRenderAsync got data: " + currentData.Length, currentData);
+                Items = currentData;
+                Logger.Log(LogLevel.Information, "OnAfterRenderAsync got data: " + currentData.Count, currentData);
             }
        }
 

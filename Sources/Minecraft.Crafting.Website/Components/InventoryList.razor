@@ -39,10 +39,4 @@
         </DisplayTemplate>
     </DataGridColumn>
     <DataGridColumn TItem="Item" Field="@nameof(Item.CreatedDate)" Caption=@Localizer["Created_Date"] DisplayFormat="{0:d}" DisplayFormatProvider="@System.Globalization.CultureInfo.GetCultureInfo("fr-FR")" />
-    <DataGridColumn TItem="Item" Field="@nameof(Item.Id)" Caption=@Localizer["Action"]>
-        <DisplayTemplate>
-            <a href="Edit/@(context.Id)" class="btn btn-primary"><i class="fa fa-edit"></i> @Localizer["Edit"]</a>
-            <button type="button" class="btn btn-primary" @onclick="() => OnDelete(context.Id)"><i class="fa fa-trash"></i> @Localizer["Delete"]</button>
-        </DisplayTemplate>
-    </DataGridColumn>
 </DataGrid>

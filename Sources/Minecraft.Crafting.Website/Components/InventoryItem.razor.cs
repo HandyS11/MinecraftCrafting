@@ -48,7 +48,7 @@ namespace Minecraft.Crafting.Website.Components
            // Parent.Actions.Add(new CraftingAction { Action = "Drag Leave", Item = this.Item, Index = this.Index });
         }
 
-        internal void OnDrop()
+        internal void OnDrop(DragEventArgs e)
         {
             if (NoDrop)
             {

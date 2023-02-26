@@ -6,10 +6,16 @@
                 <div>My inventory:</div>
                 <div>
                     <div class="css-grid">
-
-                        @foreach (var item in Items)
+                        @for (int j = 0; j < 3*9; j++)
                         {
-                            <CraftingItem Item="item" NoDrop="true" />
+                            <InventoryItem Index="j"/>
+                        }
+                    </div>
+                    <br/><br/><br/>
+                    <div class="css-grid">
+                        @for (int j = 0; j < 9; j++)
+                        {
+                            <InventoryItem Index="j+3*9" />
                         }
                     </div>
                 </div>
