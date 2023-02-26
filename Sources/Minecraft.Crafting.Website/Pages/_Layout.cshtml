@@ -32,7 +32,17 @@
         <a class="dismiss">🗙</a>
     </div>
 
-    <script src="@($"{@_config["STYLE_PATH"]}_framework/blazor.server.js")"></script>
+    <script src="_framework/blazor.server.js"></script>
+    <script src="_content/Blazored.Modal/blazored.modal.js"></script>
+
+    <script src="Components/Crafting.razor.js"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+
+    <link href="_content/Blazorise/blazorise.css" rel="stylesheet" />
+    <link href="_content/Blazorise.Bootstrap/blazorise.bootstrap.css" rel="stylesheet" />
+    <link href="_content/Blazored.Modal/blazored-modal.css" rel="stylesheet" />
+    @*<script src="@($"{@_config["STYLE_PATH"]}_framework/blazor.server.js")"></script>
     <script src="@($"{@_config["STYLE_PATH"]}_content/Blazored.Modal/blazored.modal.js")"></script>
 
     <script src="@($"{@_config["STYLE_PATH"]}Components/Crafting.razor.js")"></script>
@@ -41,6 +51,6 @@
 
     <link href="@($"{@_config["STYLE_PATH"]}_content/Blazorise/blazorise.css")" />
     <link href="@($"{@_config["STYLE_PATH"]}_content/Blazorise.Bootstrap/blazorise.bootstrap.css")" rel="stylesheet" />
-    <link href="@($"{@_config["STYLE_PATH"]}_content/Blazored.Modal/blazored-modal.css")" rel="stylesheet" />
+    <link href="@($"{@_config["STYLE_PATH"]}_content/Blazored.Modal/blazored-modal.css")" rel="stylesheet" />*@
 </body>
 </html>
