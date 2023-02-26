@@ -1,5 +1,6 @@
 ﻿@using Microsoft.AspNetCore.Components.Web
 @using Microsoft.Extensions.Configuration
+
 @namespace Minecraft.Crafting.Website.Pages
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @inject IConfiguration _config
@@ -9,7 +10,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <base href=@_config["STYLES_PATH"] />
+    <base href="@_config["BASE_PATH"]" />
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
     <link href="css/site.css" rel="stylesheet" />
     <link href="Minecraft.Crafting.Website.styles.css" rel="stylesheet" />
@@ -29,15 +30,15 @@
         <a class="dismiss">🗙</a>
     </div>
 
-    <script src="_framework/blazor.server.js"></script>
-    <script src="_content/Blazored.Modal/blazored.modal.js"></script>
+    <script src="@($"{@_config["STYLE_PATH"]}_framework/blazor.server.js")"></script>
+    <script src="@($"{@_config["STYLE_PATH"]}_content/Blazored.Modal/blazored.modal.js")"></script>
 
-    <script src="Components/Crafting.razor.js"></script>
+    <script src="@($"{@_config["STYLE_PATH"]}Components/Crafting.razor.js")"></script>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
 
-    <link href="_content/Blazorise/blazorise.css" rel="stylesheet" />
-    <link href="_content/Blazorise.Bootstrap/blazorise.bootstrap.css" rel="stylesheet" />
-    <link href="_content/Blazored.Modal/blazored-modal.css" rel="stylesheet" />
+    <link href="@($"{@_config["STYLE_PATH"]}_content/Blazorise/blazorise.css")" />
+    <link href="@($"{@_config["STYLE_PATH"]}_content/Blazorise.Bootstrap/blazorise.bootstrap.css")" rel="stylesheet" />
+    <link href="@($"{@_config["STYLE_PATH"]}_content/Blazored.Modal/blazored-modal.css")" rel="stylesheet" />
 </body>
 </html>
