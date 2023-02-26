@@ -8,5 +8,10 @@
     "itemName": "cobblestone",
     "numberItem": 64,
     "position": 8
+  },
+  {
+    "itemName": "grass",
+    "numberItem": 64,
+    "position": 15
   }
 ]

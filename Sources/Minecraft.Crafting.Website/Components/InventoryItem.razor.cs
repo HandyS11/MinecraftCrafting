@@ -67,7 +67,7 @@ namespace Minecraft.Crafting.Website.Components
 
         internal void OnDrop(DragEventArgs e)
         {
-            if (!InventorySide)
+            if (!InventorySide || CommonParent == null || CommonParent.CurrentDragItem.Item == null)
             {
                 return;
             }
