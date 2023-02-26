@@ -1,6 +1,7 @@
 ﻿@inherits LayoutComponentBase
+@inject IStringLocalizer<MainLayout> Localizer
 
-<PageTitle>Minecraft Crafting Website</PageTitle>
+<PageTitle>@Localizer["Minecraft_Crafting_Website"]</PageTitle>
 
 <div class="page">
     <div class="sidebar">
@@ -9,7 +10,7 @@
 
     <main>
         <div class="top-row px-4">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+            <a href="https://docs.microsoft.com/aspnet/" target="_blank">@Localizer["About"]</a>
             <div class="px-4">
                 <CultureSelector />
             </div>

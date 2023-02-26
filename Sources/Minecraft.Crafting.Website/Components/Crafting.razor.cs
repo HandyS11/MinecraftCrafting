@@ -3,11 +3,16 @@ using Microsoft.JSInterop;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using Minecraft.Crafting.Website.Models;
+using Microsoft.Extensions.Localization;
+using Minecraft.Crafting.Website.Pages;
 
 namespace Minecraft.Crafting.Website.Components
 {
     public partial class Crafting
     {
+        [Inject]
+        public IStringLocalizer<Add> Localizer { get; set; }
+
         private Item _recipeResult;
 
         public Crafting()

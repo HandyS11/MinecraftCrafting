@@ -10,7 +10,6 @@ namespace Minecraft.Crafting.Website.Pages
 {
     public partial class InventoryPage
     {
-
         [Inject]
         public IStringLocalizer<List> Localizer { get; set; }
         [Inject]

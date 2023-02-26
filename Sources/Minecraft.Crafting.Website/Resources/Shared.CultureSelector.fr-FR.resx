@@ -117,34 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Add" xml:space="preserve">
-    <value>Ajouter</value>
-  </data>
-  <data name="Created_Date" xml:space="preserve">
-    <value>Date de création</value>
-  </data>
-  <data name="Delete" xml:space="preserve">
-    <value>Supprimer</value>
-  </data>
-  <data name="Display_Name" xml:space="preserve">
-    <value>Nom</value>
-  </data>
-  <data name="Edit" xml:space="preserve">
-    <value>Mettre à jour</value>
-  </data>
-  <data name="Enchant_Categories" xml:space="preserve">
-    <value>Catégorie d'enchantement</value>
-  </data>
-  <data name="Maximum_Durability" xml:space="preserve">
-    <value>Durabilité maximale</value>
-  </data>
-  <data name="Repair_With" xml:space="preserve">
-    <value>Se répare avec</value>
-  </data>
-  <data name="Size_Stack" xml:space="preserve">
-    <value>Taille de pille</value>
-  </data>
-  <data name="Title" xml:space="preserve">
-    <value>Liste des objects</value>
+  <data name="Select_your_locale" xml:space="preserve">
+    <value>Choisi ta langue</value>
   </data>
 </root>
