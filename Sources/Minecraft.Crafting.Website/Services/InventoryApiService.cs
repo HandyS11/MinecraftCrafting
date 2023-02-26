@@ -1,4 +1,5 @@
-﻿using Minecraft.Crafting.Website.Factories;
+﻿using Minecraft.Crafting.Api.Models;
+using Minecraft.Crafting.Website.Factories;
 using Minecraft.Crafting.Website.Models;
 
 namespace Minecraft.Crafting.Website.Services
@@ -14,31 +15,28 @@ namespace Minecraft.Crafting.Website.Services
             host = configuration["HOST_URL"];
         }
 
-        public async Task AddToInventory(ItemModel i)
+        public async Task AddToInventory(InventoryModel i)
         {
-            // Get the item
-            var item = ItemFactory.Create(i);
 
             // Save the data
-            await _http.PostAsJsonAsync(host + "api/Invenotry/", item);
+            await _http.PostAsJsonAsync(host + "api/Inventory/", i);
         }
 
-        public async Task<List<Item>> GetAll()
+        public async Task<List<InventoryModel>> GetAll()
         {
-            List<Item> aa = await _http.GetFromJsonAsync<List<Item>>($"{host}api/Inventory/");
+            List<InventoryModel> aa = await _http.GetFromJsonAsync<List<InventoryModel>>($"{host}api/Inventory/");
             return aa;
         }
 
-        public async Task RemoveFromInventory(ItemModel i)
+        public async Task RemoveFromInventory(InventoryModel i)
         {
             await _http.DeleteAsync($"{host}api/Inventory/");
         }
 
-        public async Task UpdateInveotry(ItemModel i)
+        public async Task UpdateInventory(InventoryModel i)
         {
-            var item = ItemFactory.Create(i);
 
-            await _http.PutAsJsonAsync($"{host}api/Crafting/", item);
+            await _http.PutAsJsonAsync($"{host}api/Inventory/", i);
         }
     }
 }

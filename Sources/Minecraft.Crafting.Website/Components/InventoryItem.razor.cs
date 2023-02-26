@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
+using Minecraft.Crafting.Api.Models;
 using Minecraft.Crafting.Website.Models;
 using Minecraft.Crafting.Website.Pages;
+using Minecraft.Crafting.Website.Services;
 
 namespace Minecraft.Crafting.Website.Components
 {
@@ -11,7 +13,8 @@ namespace Minecraft.Crafting.Website.Components
         public int Index { get; set; }
 
         [Parameter]
-        public Item Item { get; set; }
+        public Models.Item Item { get; set; }
+        public InventoryModel IItem { get; set; }
 
         [Parameter]
         public bool InventorySide { get; set; }
@@ -19,8 +22,17 @@ namespace Minecraft.Crafting.Website.Components
         [Parameter]
         public InventoryPage CommonParent { get; set; }
 
+        [Parameter]
+        public Object ByPassRegister { set
+            {
+                CommonParent.uiItems[Index] = this;
+            } 
+        }
+
         [Inject]
         private ILogger<LogModel> logger { get; set; }
+        [Inject]
+        private IInventoryService inventoryService { get; set; }
 
         internal void OnDragEnter()
         {
@@ -59,9 +71,25 @@ namespace Minecraft.Crafting.Website.Components
             {
                 return;
             }
+
             if (CommonParent != null && CommonParent.Dragging)
             {
                 this.Item = CommonParent.CurrentDragItem.Item;
+                if(CommonParent.CurrentDragItem.IItem == null)
+                {
+                    IItem = new InventoryModel();
+                    IItem.ItemName = Item.Name;
+                    IItem.NumberItem = Item.StackSize;
+                    IItem.Position = this.Index;
+                    inventoryService.AddToInventory(IItem);
+                }
+                else
+                {
+                    IItem = CommonParent.CurrentDragItem.IItem;
+                    IItem.Position = this.Index;
+                    inventoryService.UpdateInventory(IItem);
+                }
+
                 CommonParent.OnDragend();
             }
             else
@@ -75,10 +103,11 @@ namespace Minecraft.Crafting.Website.Components
 
         private void OnDragEnd()
         {
-            if (!InventorySide)
+            if (!InventorySide || CommonParent.CurrentDragItem == null || CommonParent.CurrentDragItem.IItem == null)
             {
                 return;
             }
+            inventoryService.RemoveFromInventory(CommonParent.CurrentDragItem.IItem);
             CommonParent.OnDragend();
         }
 

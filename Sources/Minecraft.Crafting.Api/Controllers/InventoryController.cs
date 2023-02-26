@@ -37,6 +37,10 @@ namespace Minecraft.Crafting.Api.Controllers
         [Route("")]
         public Task AddToInventory(InventoryModel item)
         {
+            if (!System.IO.File.Exists(@"Data/inventory.json"))
+            {
+                System.IO.File.Create(@"Data/inventory.json");
+            }
             var data = JsonSerializer.Deserialize<List<InventoryModel>>(System.IO.File.ReadAllText("Data/inventory.json"), _jsonSerializerOptions);
 
             if (data == null)

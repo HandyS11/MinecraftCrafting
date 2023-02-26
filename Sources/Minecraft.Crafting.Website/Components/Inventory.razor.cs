@@ -24,7 +24,7 @@ namespace Minecraft.Crafting.Website.Components
             public InventoryPage Parent { get; set; }
 
             //[Parameter]
-            public List<Item> Items { get; set; }
+            public List<Website.Models.Item> Items { get; set; }
 
             [Inject]
             public IInventoryService InventoryService { get; set; }
@@ -37,27 +37,6 @@ namespace Minecraft.Crafting.Website.Components
             public ILocalStorageService LocalStorage { get; set; }
             [Inject]
             public NavigationManager NavigationManager { get; set; }
-
-        protected override async Task OnAfterRenderAsync(bool firstRender)
-            {
-                // Do not treat this action if is not the first render
-                if (!firstRender)
-                {
-                    return;
-                }
-
-                var currentData = await InventoryService.GetAll();
-                // Check if data exist in the local storage
-                if (currentData == null)
-                {
-                    Logger.Log(LogLevel.Information, "OnAfterRenderAsync currentData was null (excpected)", currentData);
-                    // this code add in the local storage the fake data (we load the data sync for initialize the data before load the OnReadData method)
-                    var originalData = Http.GetFromJsonAsync<Item[]>($"{NavigationManager.BaseUri}fake-data.json").Result;
-                    await LocalStorage.SetItemAsync("data", originalData);
-                }
-                Items = currentData;
-                Logger.Log(LogLevel.Information, "OnAfterRenderAsync got data: " + currentData.Count, currentData);
-            }
        }
 
 }
