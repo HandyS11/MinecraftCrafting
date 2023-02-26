@@ -15,7 +15,7 @@ namespace Minecraft.Crafting.Website.Services
         public DataApiService(HttpClient http, IConfiguration configuration)
         {
             _http = http;
-            host = configuration["HOST_URL"];
+            host = configuration["API_URL"];
         }
 
         public async Task Add(ItemModel model)
@@ -24,19 +24,19 @@ namespace Minecraft.Crafting.Website.Services
             var item = ItemFactory.Create(model);
 
             // Save the data
-            await _http.PostAsJsonAsync(host + "api/Crafting/", item);
+            await _http.PostAsJsonAsync(host + "/api/Crafting/", item);
         }
 
         public async Task<int> Count()
         {
-            return await _http.GetFromJsonAsync<int>(host + "api/Crafting/count");
+            return await _http.GetFromJsonAsync<int>(host + "/api/Crafting/count");
         }
 
         public async Task<List<Item>> List(int currentPage, int pageSize, bool orderByName = false)
         {
             // It should be great to implement a brand new method in the API
             // Old way with not sort: List<Item> aa = await _http.GetFromJsonAsync<List<Item>>($"{host}api/Crafting/?currentPage={currentPage}&pageSize={pageSize}");
-            var itemList = await _http.GetFromJsonAsync<List<Item>>($"{host}api/Crafting/All");
+            var itemList = await _http.GetFromJsonAsync<List<Item>>($"{host}/api/Crafting/All");
             List<Item> items = itemList.ToList();
             if (items.Count < 0)
             {
@@ -54,7 +54,7 @@ namespace Minecraft.Crafting.Website.Services
         public async Task<List<Item>> ListSearch(int currentPage, int pageSize, string searchBy, bool orderByName = false)
         {
             // It should be great to implement a brand new method in the API
-            var itemList = await _http.GetFromJsonAsync<List<Item>>($"{host}api/Crafting/All");
+            var itemList = await _http.GetFromJsonAsync<List<Item>>($"{host}/api/Crafting/All");
             List<Item> itemFilterList = itemList.Where(item => item.DisplayName.ContainsIgnoreCase(searchBy)).ToList();
             if (itemFilterList.Count < 0)
             {
@@ -71,7 +71,7 @@ namespace Minecraft.Crafting.Website.Services
 
         public async Task<Item> GetById(int id)
         {
-            return await _http.GetFromJsonAsync<Item>($"{host}api/Crafting/{id}");
+            return await _http.GetFromJsonAsync<Item>($"{host}/api/Crafting/{id}");
         }
 
         public async Task Update(int id, ItemModel model)
@@ -79,17 +79,17 @@ namespace Minecraft.Crafting.Website.Services
             // Get the item
             var item = ItemFactory.Create(model);
 
-            await _http.PutAsJsonAsync($"{host}api/Crafting/{id}", item);
+            await _http.PutAsJsonAsync($"{host}/api/Crafting/{id}", item);
         }
 
         public async Task Delete(int id)
         {
-            await _http.DeleteAsync($"{host}api/Crafting/{id}");
+            await _http.DeleteAsync($"{host}/api/Crafting/{id}");
         }
 
         public async Task<List<CraftingRecipe>> GetRecipes()
         {
-            return await _http.GetFromJsonAsync<List<CraftingRecipe>>(host + "api/Crafting/recipe");
+            return await _http.GetFromJsonAsync<List<CraftingRecipe>>(host + "/api/Crafting/recipe");
         }
     }
 }

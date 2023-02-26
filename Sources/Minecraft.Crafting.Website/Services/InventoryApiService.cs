@@ -14,19 +14,19 @@ namespace Minecraft.Crafting.Website.Services
         public InventoryApiService(HttpClient http, IConfiguration configuration)
         {
             _http = http;
-            host = configuration["HOST_URL"];
+            host = configuration["API_URL"];
         }
 
         public async Task AddToInventory(InventoryModel i)
         {
 
             // Save the data
-            await _http.PostAsJsonAsync(host + "api/Inventory/", i);
+            await _http.PostAsJsonAsync(host + "/api/Inventory/", i);
         }
 
         public async Task<List<InventoryModel>> GetAll()
         {
-            List<InventoryModel> aa = await _http.GetFromJsonAsync<List<InventoryModel>>($"{host}api/Inventory/");
+            List<InventoryModel> aa = await _http.GetFromJsonAsync<List<InventoryModel>>($"{host}/api/Inventory/");
             return aa;
         }
 
@@ -35,7 +35,7 @@ namespace Minecraft.Crafting.Website.Services
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Delete,
-                RequestUri = new Uri($"{host}api/Inventory/"),
+                RequestUri = new Uri($"{host}/api/Inventory/"),
                 Content = new StringContent(JsonConvert.SerializeObject(i), Encoding.UTF8, "application/json")
             };
             var response = await _http.SendAsync(request);
@@ -43,7 +43,7 @@ namespace Minecraft.Crafting.Website.Services
 
         public async Task UpdateInventory(InventoryModel i)
         {
-            await _http.PutAsJsonAsync($"{host}api/Inventory/", i);
+            await _http.PutAsJsonAsync($"{host}/api/Inventory/", i);
         }
     }
 }
