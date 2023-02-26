@@ -9,7 +9,11 @@ namespace Minecraft.Crafting.Website.Services
 
         Task<int> Count();
 
-        Task<List<Item>> List(int currentPage, int pageSize);
+        public int getLastCount();
+
+        Task<List<Item>> List(int currentPage, int pageSize, bool orderByName = false);
+
+        Task<List<Item>> ListSearch(int currentPage, int pageSize, string searchBy, bool orderByName = false);
 
         Task<Item> GetById(int id);
 

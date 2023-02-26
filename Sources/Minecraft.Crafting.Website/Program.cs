@@ -17,6 +17,7 @@ builder.Services.AddServerSideBlazor();
 
 builder.Services.AddHttpClient();
 builder.Services.AddScoped<IDataService, DataApiService>();
+builder.Services.AddScoped<IInventoryService, InventoryApiService>();
 
 builder.Services
     .AddBlazorise()
