@@ -14,7 +14,7 @@ namespace Minecraft.Crafting.Website.Components
         public Item Item { get; set; }
 
         [Parameter]
-        public bool NoDrop { get; set; }
+        public bool InventorySide { get; set; }
 
         [Parameter]
         public InventoryPage CommonParent { get; set; }
@@ -24,56 +24,44 @@ namespace Minecraft.Crafting.Website.Components
 
         internal void OnDragEnter()
         {
-            if (NoDrop)
+            if (!InventorySide)
             {
                 return;
             }
-
-            //Parent.Actions.Add(new CraftingAction { Action = "Drag Enter", Item = this.Item, Index = this.Index });
         }
 
         internal void OnDragEnter(DragEventArgs e)
         {
             if (!CommonParent.Dragging)
             {
-                CommonParent.OnDragbegin(Item);
+                CommonParent.OnDragbegin(this);
             }
-            //Parent.Actions.Add(new CraftingAction { Action = "Drag Enter", Item = this.Item, Index = this.Index });
         }
 
         internal void OnDragLeave()
         {
-            if (NoDrop)
+            if (!InventorySide)
             {
                 return;
             }
-           // Parent.Actions.Add(new CraftingAction { Action = "Drag Leave", Item = this.Item, Index = this.Index });
         }
         internal void OnDrop()
         {
-            if (NoDrop)
+            if (!InventorySide)
             {
                 return;
             }
-            /*
-            this.Item = Parent.CurrentDragItem;
-            Parent.RecipeItems[this.Index] = this.Item;
-
-            Parent.Actions.Add(new CraftingAction { Action = "Drop", Item = this.Item, Index = this.Index });
-
-            // Check recipe
-            Parent.CheckRecipe();*/
         }
 
         internal void OnDrop(DragEventArgs e)
         {
-            if (NoDrop)
+            if (!InventorySide)
             {
                 return;
             }
             if (CommonParent != null && CommonParent.Dragging)
             {
-                this.Item = CommonParent.CurrentDragItem;
+                this.Item = CommonParent.CurrentDragItem.Item;
                 CommonParent.OnDragend();
             }
             else
@@ -82,11 +70,21 @@ namespace Minecraft.Crafting.Website.Components
 
         private void OnDragStart()
         {
-            CommonParent.OnDragbegin(Item);
-            /*
-            Parent.CurrentDragItem = this.Item;
+            CommonParent.OnDragbegin(this);
+        }
 
-            Parent.Actions.Add(new CraftingAction { Action = "Drag Start", Item = this.Item, Index = this.Index });*/
+        private void OnDragEnd()
+        {
+            if (!InventorySide)
+            {
+                return;
+            }
+            CommonParent.OnDragend();
+        }
+
+        public void empty()
+        {
+            Item = null;
         }
     }
 }

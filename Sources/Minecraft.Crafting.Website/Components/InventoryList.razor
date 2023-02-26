@@ -14,7 +14,7 @@
     <DataGridColumn TItem="Item" Field="@nameof(Item.Id)" Caption="#" />
     <DataGridColumn TItem="Item" Field="@nameof(Item.Id)" Caption=@Localizer["Image"]>
         <DisplayTemplate>
-                <InventoryItem CommonParent="this.Parent" Item="context" NoDrop="false" />
+            <InventoryItem CommonParent="this.Parent" InventorySide="false" Item="context" />
         </DisplayTemplate>
     </DataGridColumn>
     <DataGridColumn TItem="Item" Field="@nameof(Item.DisplayName)" Caption=@Localizer["Display_Name"] />
