@@ -20,6 +20,7 @@ steps:
       - cd Sources/
       - dotnet restore MinecraftCrafting.sln
       - dotnet test MinecraftCrafting.sln -c Release --no-restore
+    depends_on: [build]
 
   - name: code-analysis
     image: hub.codefirst.iut.uca.fr/thomas.bellembois/codefirst-dronesonarplugin-dotnet6
