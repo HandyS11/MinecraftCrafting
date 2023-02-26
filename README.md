@@ -39,17 +39,17 @@ Self evaluated.
 
 | Tasks | Points | Status |
 | --- | --- | --- |
-| 🔖 **Blazor Apps** | 30 | [🟨]
+| 🔖 **Blazor Apps** | 30 | [🟦]
 | Implementation of a data visualization page with pagination | 2 | [🟩]
 | Page for adding an element with validation | 2 | [🟩]
 | Edit page of an element with validation | 2 | [🟩]
 | Deletion of an element with a confirmation | 2 | [🟩]
-| Complex component | 5 | [🟦]
-| Use API (Get / Insert / Update / Delete) | 3 | [🟨]
+| Complex component | 5 | [🟩]
+| Use API (Get / Insert / Update / Delete) | 3 | [🟩]
 | IOC & DI use | 4 | [🟩]
-| Localization & Globalization (at least two languages) | 1 | [🟨]
+| Localization & Globalization (at least two languages) | 1 | [🟩]
 | Use of the configuration | 1 | [🟩]
-| Logs | 2 | [🟨]
+| Logs | 2 | [🟩]
 | Code cleanliness (sonarqube) | 2 | [🟩]
 | GUI (Global design, placement of buttons, ...) | 2 | [🟦]
 | Code location (No code in views) | 2 | [🟩]
