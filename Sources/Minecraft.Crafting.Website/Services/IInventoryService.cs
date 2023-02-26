@@ -4,9 +4,9 @@ namespace Minecraft.Crafting.Website.Services
 {
     public interface IInventoryService
     {
-        Task AddToInventory(Item i);
-        Task RemoveFromInventory(Item i);
+        Task AddToInventory(ItemModel i);
+        Task RemoveFromInventory(ItemModel i);
         Task<List<Item>> GetAll();
-        Task UpdateInveotry(Item i);
+        Task UpdateInveotry(ItemModel i);
     }
 }
