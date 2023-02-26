@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
 using Minecraft.Crafting.Website.Models;
 
 namespace Minecraft.Crafting.Website.Components
@@ -18,6 +19,16 @@ namespace Minecraft.Crafting.Website.Components
         public Crafting Parent { get; set; }
 
         internal void OnDragEnter()
+        {
+            if (NoDrop)
+            {
+                return;
+            }
+
+            Parent.Actions.Add(new CraftingAction { Action = "Drag Enter", Item = this.Item, Index = this.Index });
+        }
+
+        internal void OnDragEnter(DragEventArgs e)
         {
             if (NoDrop)
             {

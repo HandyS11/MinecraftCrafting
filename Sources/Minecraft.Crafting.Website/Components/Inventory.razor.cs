@@ -3,6 +3,11 @@ using Microsoft.JSInterop;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using Minecraft.Crafting.Website.Models;
+using Microsoft.Extensions.Logging;
+using static System.Net.WebRequestMethods;
+using Minecraft.Crafting.Website.Pages;
+using Minecraft.Crafting.Website.Services;
+using Blazored.LocalStorage;
 
 namespace Minecraft.Crafting.Website.Components
 {
@@ -11,26 +16,27 @@ namespace Minecraft.Crafting.Website.Components
 
             public Inventory()
             {
-                Actions = new ObservableCollection<CraftingAction>();
-                Actions.CollectionChanged += OnActionsCollectionChanged;
             }
 
             public ObservableCollection<CraftingAction> Actions { get; set; }
-            public Item CurrentDragItem { get; set; }
 
             [Parameter]
-            public List<Item> Items { get; set; }
+            public InventoryPage Parent { get; set; }
 
-            /// <summary>
-            /// Gets or sets the java script runtime.
-            /// </summary>
+            //[Parameter]
+            public List<Website.Models.Item> Items { get; set; }
+
             [Inject]
-            internal IJSRuntime JavaScriptRuntime { get; set; }
+            public IInventoryService InventoryService { get; set; }
+            [Inject]
+            public ILogger<LogModel> Logger { get; set; }
+            [Inject]
+            public HttpClient Http { get; set; }
 
-            private void OnActionsCollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
-            {
-                JavaScriptRuntime.InvokeVoidAsync("Crafting.AddActions", e.NewItems);
-            }
+            [Inject]
+            public ILocalStorageService LocalStorage { get; set; }
+            [Inject]
+            public NavigationManager NavigationManager { get; set; }
        }
 
 }

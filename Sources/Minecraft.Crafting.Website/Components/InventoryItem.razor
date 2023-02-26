@@ -1,10 +1,12 @@
-﻿<div class="item"
+﻿<div>
+<div class="item"
      ondragover="event.preventDefault();"
      draggable="true"
      @ondragstart="@OnDragStart"
-     @ondrop="@OnDrop"
+     @ondrop="@(e => OnDrop(e))"
      @ondragenter="@(e => OnDragEnter(e))"
-     @ondragleave="@OnDragLeave">
+     @ondragleave="@OnDragLeave"
+    @ondragend="@OnDragEnd">
 
     @if (Item != null)
     {
@@ -17,4 +19,8 @@
             <img src="images/default.png" class="img-thumbnail" title="@Item.DisplayName" alt="@Item.DisplayName" style="max-width: 150px" />
             }
     }
+</div>
+<div class="overlay">
+        <p class="white shadow">@Item?.StackSize</p>
+</div>
 </div>

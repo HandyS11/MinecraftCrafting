@@ -1,0 +1,34 @@
+﻿@using Minecraft.Crafting.Website.Models
+
+
+<input @bind="searchText"/>
+<button @onclick="SearchClicked">Search</button>
+
+<DataGrid TItem="Item"
+          Data="@items"
+          ReadData="@OnReadData"
+          TotalItems="@totalItem"
+          PageSize="10"
+          ShowPager
+          Responsive>
+    <DataGridColumn TItem="Item" Field="@nameof(Item.Id)" Caption="#" />
+    <DataGridColumn TItem="Item" Field="@nameof(Item.Id)" Caption=@Localizer["Image"]>
+        <DisplayTemplate>
+            <InventoryItem CommonParent="this.Parent" InventorySide="false" Item="context" />
+        </DisplayTemplate>
+    </DataGridColumn>
+    <DataGridColumn TItem="Item" Field="@nameof(Item.DisplayName)" Caption=@Localizer["Display_Name"] />
+    <DataGridColumn TItem="Item" Field="@nameof(Item.StackSize)" Caption=@Localizer["Size_Stack"] />
+    <DataGridColumn TItem="Item" Field="@nameof(Item.MaxDurability)" Caption=@Localizer["Maximum_Durability"] />
+    <DataGridColumn TItem="Item" Field="@nameof(Item.EnchantCategories)" Caption=@Localizer["Enchant_Categories"]>
+        <DisplayTemplate>
+            @(string.Join(", ", ((Item)context).EnchantCategories))
+        </DisplayTemplate>
+    </DataGridColumn>
+    <DataGridColumn TItem="Item" Field="@nameof(Item.RepairWith)" Caption=@Localizer["Repair_With"]>
+        <DisplayTemplate>
+            @(string.Join(", ", ((Item)context).RepairWith))
+        </DisplayTemplate>
+    </DataGridColumn>
+    <DataGridColumn TItem="Item" Field="@nameof(Item.CreatedDate)" Caption=@Localizer["Created_Date"] DisplayFormat="{0:d}" DisplayFormatProvider="@System.Globalization.CultureInfo.GetCultureInfo("fr-FR")" />
+</DataGrid>
