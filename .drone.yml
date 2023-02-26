@@ -95,6 +95,9 @@ steps:
         CONTAINERNAME: blazorwebsite
         COMMAND: create
         OVERWRITE: true
+        CODEFIRST_CLIENTDRONE_ENV_API_URL: http://codefirst.iut.uca.fr/containers/MinecraftCraftingCorp-blazorapi:80
+        CODEFIRST_CLIENTDRONE_ENV_BASE_PATH: MinecraftCraftingCorp-blazorwebsite/	
+        CODEFIRST_CLIENTDRONE_ENV_STYLE_PATH: /
         ADMINS: valentinclergue,yorickgeoffre
     when:
       branch:
