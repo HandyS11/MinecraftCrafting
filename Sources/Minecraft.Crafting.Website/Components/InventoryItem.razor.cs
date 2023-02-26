@@ -4,7 +4,7 @@ using Minecraft.Crafting.Website.Models;
 
 namespace Minecraft.Crafting.Website.Components
 {
-    public partial class CraftingItem
+    public partial class InventoryItem
     {
         [Parameter]
         public int Index { get; set; }
@@ -16,7 +16,7 @@ namespace Minecraft.Crafting.Website.Components
         public bool NoDrop { get; set; }
 
         [CascadingParameter]
-        public Crafting Parent { get; set; }
+        public InventoryList Parent { get; set; }
 
         internal void OnDragEnter()
         {
@@ -25,7 +25,7 @@ namespace Minecraft.Crafting.Website.Components
                 return;
             }
 
-            Parent.Actions.Add(new CraftingAction { Action = "Drag Enter", Item = this.Item, Index = this.Index });
+            //Parent.Actions.Add(new CraftingAction { Action = "Drag Enter", Item = this.Item, Index = this.Index });
         }
 
         internal void OnDragEnter(DragEventArgs e)
@@ -35,7 +35,7 @@ namespace Minecraft.Crafting.Website.Components
                 return;
             }
 
-            Parent.Actions.Add(new CraftingAction { Action = "Drag Enter", Item = this.Item, Index = this.Index });
+            //Parent.Actions.Add(new CraftingAction { Action = "Drag Enter", Item = this.Item, Index = this.Index });
         }
 
         internal void OnDragLeave()
@@ -45,7 +45,7 @@ namespace Minecraft.Crafting.Website.Components
                 return;
             }
 
-            Parent.Actions.Add(new CraftingAction { Action = "Drag Leave", Item = this.Item, Index = this.Index });
+           // Parent.Actions.Add(new CraftingAction { Action = "Drag Leave", Item = this.Item, Index = this.Index });
         }
 
         internal void OnDrop()
@@ -54,21 +54,21 @@ namespace Minecraft.Crafting.Website.Components
             {
                 return;
             }
-
+            /*
             this.Item = Parent.CurrentDragItem;
             Parent.RecipeItems[this.Index] = this.Item;
 
             Parent.Actions.Add(new CraftingAction { Action = "Drop", Item = this.Item, Index = this.Index });
 
             // Check recipe
-            Parent.CheckRecipe();
+            Parent.CheckRecipe();*/
         }
 
         private void OnDragStart()
-        {
+        {/*
             Parent.CurrentDragItem = this.Item;
 
-            Parent.Actions.Add(new CraftingAction { Action = "Drag Start", Item = this.Item, Index = this.Index });
+            Parent.Actions.Add(new CraftingAction { Action = "Drag Start", Item = this.Item, Index = this.Index });*/
         }
     }
 }

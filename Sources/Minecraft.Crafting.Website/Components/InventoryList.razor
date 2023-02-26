@@ -16,7 +16,8 @@
         <DisplayTemplate>
             @if (!string.IsNullOrWhiteSpace(context.ImageBase64))
             {
-                <img src="data:image/png;base64, @(context.ImageBase64)" class="img-thumbnail" title="@context.DisplayName" alt="@context.DisplayName" style="min-width: 50px; max-width: 150px" />
+                <InventoryItem Item="this.items.FirstOrDefault()" NoDrop="false" />
+                //<img src="data:image/png;base64, @(context.ImageBase64)" class="img-thumbnail" title="@context.DisplayName" alt="@context.DisplayName" style="min-width: 50px; max-width: 150px" />
             }
             else
             {
