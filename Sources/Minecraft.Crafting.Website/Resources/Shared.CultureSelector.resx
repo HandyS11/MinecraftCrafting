@@ -118,6 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Select_your_locale" xml:space="preserve">
-    <value>Select your locale:</value>
+    <value>Select your locale: </value>
   </data>
 </root>

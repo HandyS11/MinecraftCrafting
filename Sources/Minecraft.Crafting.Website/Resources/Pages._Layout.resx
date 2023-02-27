@@ -117,7 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Select_your_locale" xml:space="preserve">
-    <value>Choisi ta langue : </value>
+  <data name="Error_dev" xml:space="preserve">
+    <value>Une erreur non suportée est survenu. Voir la console développeur pour plus de détails.</value>
+  </data>
+  <data name="Error_prod" xml:space="preserve">
+    <value>Une erreur est survenu. Cette application pourrait ne pas répondre.</value>
+  </data>
+  <data name="Reload" xml:space="preserve">
+    <value>Recharger</value>
   </data>
 </root>

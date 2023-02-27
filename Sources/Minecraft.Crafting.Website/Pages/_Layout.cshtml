@@ -1,9 +1,11 @@
 ﻿@using Microsoft.AspNetCore.Components.Web
 @using Microsoft.Extensions.Configuration
+@using Microsoft.Extensions.Localization;
 
 @namespace Minecraft.Crafting.Website.Pages
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @inject IConfiguration _config
+@inject IStringLocalizer<Pages__Layout> Localizer
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,16 +23,26 @@
 
     <div id="blazor-error-ui">
         <environment include="Staging,Production">
-            An error has occurred. This application may no longer respond until reloaded.
+            @Localizer["Error_prod"]
         </environment>
         <environment include="Development">
-            An unhandled exception has occurred. See browser dev tools for details.
+            @Localizer["Error_dev"]
         </environment>
-        <a href="" class="reload">Reload</a>
+        <a href="" class="reload">@Localizer["Reload"]</a>
         <a class="dismiss">🗙</a>
     </div>
 
-    <script src="@($"{@_config["STYLE_PATH"]}_framework/blazor.server.js")"></script>
+    <script src="_framework/blazor.server.js"></script>
+    <script src="_content/Blazored.Modal/blazored.modal.js"></script>
+
+    <script src="Components/Crafting.razor.js"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+
+    <link href="_content/Blazorise/blazorise.css" rel="stylesheet" />
+    <link href="_content/Blazorise.Bootstrap/blazorise.bootstrap.css" rel="stylesheet" />
+    <link href="_content/Blazored.Modal/blazored-modal.css" rel="stylesheet" />
+    @*<script src="@($"{@_config["STYLE_PATH"]}_framework/blazor.server.js")"></script>
     <script src="@($"{@_config["STYLE_PATH"]}_content/Blazored.Modal/blazored.modal.js")"></script>
 
     <script src="@($"{@_config["STYLE_PATH"]}Components/Crafting.razor.js")"></script>
@@ -39,6 +51,6 @@
 
     <link href="@($"{@_config["STYLE_PATH"]}_content/Blazorise/blazorise.css")" />
     <link href="@($"{@_config["STYLE_PATH"]}_content/Blazorise.Bootstrap/blazorise.bootstrap.css")" rel="stylesheet" />
-    <link href="@($"{@_config["STYLE_PATH"]}_content/Blazored.Modal/blazored-modal.css")" rel="stylesheet" />
+    <link href="@($"{@_config["STYLE_PATH"]}_content/Blazored.Modal/blazored-modal.css")" rel="stylesheet" />*@
 </body>
 </html>
