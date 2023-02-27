@@ -55,7 +55,7 @@ Self evaluated.
 | Code location (No code in views) | 2 | [🟩]
 | 🔖 **Documentation** | 10 | [🟨]
 | The Readme | 2 | [🟨]
-| Description of how the client solution works (code-level illustration) | 6 | [🟥]
+| Description of how the client solution works (code-level illustration) | 6 | [🟨]
 | Merge request | 2 | [🟩]
 
 ## Credits
