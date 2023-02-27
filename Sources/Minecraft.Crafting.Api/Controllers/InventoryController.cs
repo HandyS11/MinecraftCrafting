@@ -20,7 +20,7 @@ namespace Minecraft.Crafting.Api.Controllers
     [Route("api/[controller]")]
     public class InventoryController : ControllerBase
     {
-        private Mutex mtx = new Mutex();
+        private static Mutex mtx = new Mutex(false);
         /// <summary>
         /// The json serializer options.
         /// </summary>

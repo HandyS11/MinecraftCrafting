@@ -82,7 +82,7 @@ namespace Minecraft.Crafting.Website.Components
                 }
             }
             else
-                logger.Log(LogLevel.Error, "parent was null for InventoryItem!");
+                logger.Log(LogLevel.Error, "item not null");
         }
 
         private void OnDragStart()
@@ -103,6 +103,7 @@ namespace Minecraft.Crafting.Website.Components
         {
             if( IItem != null && cea.Button == (long)MouseButton.Left)
             {
+                IItem.Position = Index;
                 IItem.NumberItem /= 2;
                 inventoryService.UpdateInventory(IItem);
             }
