@@ -1,12 +1,12 @@
 ﻿<div>
-<div class="item"
+<div class="item" alt="@Item?.DisplayName"
      ondragover="event.preventDefault();"
      draggable="true"
      @ondragstart="@OnDragStart"
      @ondrop="@(e => OnDrop(e))"
      @ondragenter="@(e => OnDragEnter(e))"
-     @ondragleave="@OnDragLeave"
-    @ondragend="@OnDragEnd">
+    @ondragend="@OnDragEnd"
+    @onclick="@OnClick">
 
     @if (Item != null)
     {
@@ -21,6 +21,6 @@
     }
 </div>
 <div class="overlay">
-        <p class="white shadow">@Item?.StackSize</p>
+        <p class="white shadow">@IItem?.NumberItem</p>
 </div>
 </div>

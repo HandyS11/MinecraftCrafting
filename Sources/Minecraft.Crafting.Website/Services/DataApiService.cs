@@ -11,7 +11,6 @@ namespace Minecraft.Crafting.Website.Services
         private readonly HttpClient _http;
         private readonly string host;
         private int lastCount = 0;
-
         public int getLastCount() => lastCount;
 
         public DataApiService(HttpClient http, IConfiguration configuration)

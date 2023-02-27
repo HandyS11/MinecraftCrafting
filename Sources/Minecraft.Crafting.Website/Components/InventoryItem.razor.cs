@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using Blazorise;
+using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Minecraft.Crafting.Api.Models;
 using Minecraft.Crafting.Website.Models;
@@ -34,34 +35,12 @@ namespace Minecraft.Crafting.Website.Components
         [Inject]
         private IInventoryService inventoryService { get; set; }
 
-        internal void OnDragEnter()
-        {
-            if (!InventorySide)
-            {
-                return;
-            }
-        }
-
         internal void OnDragEnter(DragEventArgs e)
         {
             if (!CommonParent.Dragging)
             {
                 CommonParent.OnDragbegin(this);
-            }
-        }
-
-        internal void OnDragLeave()
-        {
-            if (!InventorySide)
-            {
-                return;
-            }
-        }
-        internal void OnDrop()
-        {
-            if (!InventorySide)
-            {
-                return;
+                logger.Log(LogLevel.Information, "User has begun to drag element :" + CommonParent?.CurrentDragItem?.Item?.DisplayName);
             }
         }
 
@@ -74,23 +53,33 @@ namespace Minecraft.Crafting.Website.Components
 
             if (CommonParent != null && CommonParent.Dragging)
             {
-                this.Item = CommonParent.CurrentDragItem.Item;
-                if(CommonParent.CurrentDragItem.IItem == null)
+                if (this.Item == null)
                 {
-                    IItem = new InventoryModel();
-                    IItem.ItemName = Item.Name;
-                    IItem.NumberItem = Item.StackSize;
-                    IItem.Position = this.Index;
-                    inventoryService.AddToInventory(IItem);
+                    this.Item = CommonParent.CurrentDragItem.Item;
+                    if (CommonParent.CurrentDragItem.IItem == null)
+                    {
+                        IItem = new InventoryModel();
+                        IItem.ItemName = Item.Name;
+                        IItem.NumberItem = Item.StackSize;
+                        IItem.Position = this.Index;
+                        inventoryService.AddToInventory(IItem);
+                    }
+                    else
+                    {
+                        IItem = CommonParent.CurrentDragItem.IItem;
+                        IItem.Position = this.Index;
+                        inventoryService.AddToInventory(IItem);
+                    }
+                    logger.Log(LogLevel.Information,
+                        $"User has finished dragging element :{CommonParent?.CurrentDragItem?.Item?.DisplayName} and has dropped it on cell {IItem?.Position} which was empty");
+                    CommonParent.OnDragend();
                 }
                 else
                 {
-                    IItem = CommonParent.CurrentDragItem.IItem;
-                    IItem.Position = this.Index;
-                    inventoryService.AddToInventory(IItem);
+                    logger.Log(LogLevel.Information, 
+                        $"User has finished dragging element :{CommonParent?.CurrentDragItem?.Item?.DisplayName} and has dropped it on cell {IItem?.Position} which contained {Item.DisplayName}");
+                    CommonParent.OnDragend(false);
                 }
-
-                CommonParent.OnDragend();
             }
             else
                 logger.Log(LogLevel.Error, "parent was null for InventoryItem!");
@@ -107,16 +96,26 @@ namespace Minecraft.Crafting.Website.Components
             {
                 return;
             }
-            //inventoryService.RemoveFromInventory(CommonParent.CurrentDragItem.IItem);
             CommonParent.OnDragend();
+        }
+
+        private void OnClick(MouseEventArgs cea)
+        {
+            if( IItem != null && cea.Button == (long)MouseButton.Left)
+            {
+                IItem.NumberItem /= 2;
+                inventoryService.UpdateInventory(IItem);
+            }
         }
 
         public void empty()
         {
             if (IItem != null)
             {
+                //inventoryService.AddToInventory(IItem);
                 IItem.Position = Index;
                 inventoryService.RemoveFromInventory(IItem);
+                IItem = null;
                 Item = null;
             }
         }

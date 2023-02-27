@@ -46,10 +46,11 @@ namespace Minecraft.Crafting.Website.Pages
             Dragging= true;
         }
 
-        public async void OnDragend()
+        public async void OnDragend(bool clearing = true)
         {
-            //await InventoryService.AddToInventory(CurrentDragItem);
-            CurrentDragItem?.empty();
+            if(clearing)
+                CurrentDragItem?.empty();
+
             CurrentDragItem = null;
             Dragging= false;
         }

@@ -21,7 +21,6 @@ namespace Minecraft.Crafting.Website.Services
 
         public async Task AddToInventory(InventoryModel i)
         {
-
             // Save the data
             await _http.PostAsJsonAsync(host + "/api/Inventory/", i);
         }
