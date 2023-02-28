@@ -62,3 +62,6 @@ Self evaluated.
 
 * Co-author: [**Valetin Clergue**](https://github.com/HandyS11)
 * Co-author: [**Yorick Geoffre**](https://github.com/Kanken6174)
+
+## Documentation
+the code-level illustration of how the client works is available in the Documentation folder.
