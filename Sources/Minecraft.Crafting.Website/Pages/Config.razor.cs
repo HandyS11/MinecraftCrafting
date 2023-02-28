@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
-using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Options;
 using Minecraft.Crafting.Website.Models;
 
@@ -7,6 +7,9 @@ namespace Minecraft.Crafting.Website.Pages
 {
     public partial class Config
     {
+        [Inject]
+        public IStringLocalizer<Config> Localizer { get; set; }
+
         [Inject]
         public IConfiguration Configuration { get; set; }
 
