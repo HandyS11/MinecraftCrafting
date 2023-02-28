@@ -1,9 +1,9 @@
 ## code level documentation (sequence diagrams)
-#### loading logic illusatration:
+#### loading logic illustration:
 ![initial loading logic](./viewLoad.svg)   
 ---   
-#### click logic illusatration:
+#### click logic illustration:
 ![click logic](./click.svg)
 ---   
-#### drag logic illusatration:
+#### drag logic illustration:
 ![drag logic](./drag.svg)
