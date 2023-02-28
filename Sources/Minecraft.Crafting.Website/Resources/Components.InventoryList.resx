@@ -117,7 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Available_items" xml:space="preserve">
-    <value>Available items:</value>
+  <data name="Created_Date" xml:space="preserve">
+    <value>Creation date:</value>
+  </data>
+  <data name="Display_Name" xml:space="preserve">
+    <value>Display name:</value>
+  </data>
+  <data name="Enchant_Categories" xml:space="preserve">
+    <value>Enchantment catégories:</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>Image:</value>
+  </data>
+  <data name="Maximum_Durability" xml:space="preserve">
+    <value>Maximum durability:</value>
+  </data>
+  <data name="Repair_With" xml:space="preserve">
+    <value>Repair with:</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Size_Stack" xml:space="preserve">
+    <value>Stack size:</value>
   </data>
 </root>

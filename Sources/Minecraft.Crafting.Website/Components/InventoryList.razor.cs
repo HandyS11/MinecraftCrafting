@@ -25,7 +25,7 @@ namespace Minecraft.Crafting.Website.Components
         public string searchText { get; set; } = "";
 
         [Inject]
-        public IStringLocalizer<List> Localizer { get; set; }
+        public IStringLocalizer<InventoryList> Localizer { get; set; }
 
         [Inject]
         public HttpClient Http { get; set; }

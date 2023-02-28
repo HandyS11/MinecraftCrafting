@@ -11,7 +11,7 @@ namespace Minecraft.Crafting.Website.Components
     public partial class Crafting
     {
         [Inject]
-        public IStringLocalizer<Add> Localizer { get; set; }
+        public IStringLocalizer<Crafting> Localizer { get; set; }
 
         private Item _recipeResult;
 

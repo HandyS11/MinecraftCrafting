@@ -33,7 +33,7 @@ namespace Minecraft.Crafting.Website.Components
         public NavigationManager NavigationManager { get; set; }
 
         [Inject]
-        public IStringLocalizer<Add> Localizer { get; set; }
+        public IStringLocalizer<Inventory> Localizer { get; set; }
     }
 
 }
