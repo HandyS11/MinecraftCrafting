@@ -14,6 +14,7 @@ namespace Minecraft.Crafting.Api
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            IConfigurationSection appSettingsSection = builder.Configuration.GetSection("AppSettings");
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -35,7 +36,7 @@ namespace Minecraft.Crafting.Api
 
             app.MapControllers();
 
-            app.Run();
+            app.Run(appSettingsSection["HOST"]);
         }
     }
 }
