@@ -17,11 +17,25 @@
 
 # MinecraftCrafting
 
+## Documentation
+
+Go to the `./Documentation` folder to see the code-level illustration of how the client works (partial).
+
 ## Getting started
 
-...
+To test this website with localhost follow the steps:
+
+- **Open** the `./Sources/MinecraftCrafting.sln` with VS(22)
+- **Clean** the solution and then **build** it.
+- **Right click** on the solution or any project and **click** "Configure Startup Projects..."
+- On the window **select** the "Multiple startup projects" option 
+- Then **check** "Minecraft.Crafting.Api" & "Minecraft.Crafting.Website"
+- **Click** "Apply" and then "Ok"
+- Finally **start** the solution ;)
 
 ## Links
+
+To use the website and the api online follow theses links:
 
 - API -> https://codefirst.iut.uca.fr/containers/MinecraftCraftingCorp-blazorapi
 - Website -> https://codefirst.iut.uca.fr/containers/MinecraftCraftingCorp-blazorwebsite
@@ -39,7 +53,7 @@ Self evaluated.
 
 | Tasks | Points | Status |
 | --- | --- | --- |
-| 🔖 **Blazor Apps** | 30 | [🟦]
+| 🔖 **Blazor Apps** | 30 | [🟩]
 | Implementation of a data visualization page with pagination | 2 | [🟩]
 | Page for adding an element with validation | 2 | [🟩]
 | Edit page of an element with validation | 2 | [🟩]
@@ -53,8 +67,8 @@ Self evaluated.
 | Code cleanliness (sonarqube) | 2 | [🟩]
 | GUI (Global design, placement of buttons, ...) | 2 | [🟦]
 | Code location (No code in views) | 2 | [🟩]
-| 🔖 **Documentation** | 10 | [🟨]
-| The Readme | 2 | [🟨]
+| 🔖 **Documentation** | 10 | [🟩]
+| The Readme | 2 | [🟩]
 | Description of how the client solution works (code-level illustration) | 6 | [🟨]
 | Merge request | 2 | [🟩]
 
@@ -62,6 +76,3 @@ Self evaluated.
 
 * Co-author: [**Valetin Clergue**](https://github.com/HandyS11)
 * Co-author: [**Yorick Geoffre**](https://github.com/Kanken6174)
-
-## Documentation
-the code-level illustration of how the client works is available in the Documentation folder.
